@@ -70,6 +70,11 @@ set number
 " Show ruler
 set ruler
 
+" Trailing whitespace
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+highlight EOLWS ctermbg=red guibg=red
+
 " Map leader
 let mapleader=" "
 
@@ -135,6 +140,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'ciaranm/detectindent'
+Plugin 'kien/ctrlp.vim'
+Plugin 'justinmk/vim-sneak'
 
 call vundle#end()
 filetype plugin indent on
@@ -150,6 +158,18 @@ let g:tagbar_singleclick=1
 let g:tagbar_iconchars=['+','-']
 let g:tagbar_sort=0
 let g:tagbar_show_linenumbers=1
+
+" Detectindent
+let g:detectindent_preferred_expandtab=1
+let g:detectindent_preferred_indent=4
+let g:detectindent_max_lines_to_analyse=1024
+
+" Ctrlp
+let g:ctrlp_map="<Leader>3"
+let g:ctrlp_by_filename=1
+let g:ctrlp_match_window="order:ttb"
+let g:ctrlp_show_hidden=1
+let g:ctrlp_open_new_file="t"
 
 " Mappings
 noremap <silent> <Leader>1 :NERDTreeToggle<CR>
