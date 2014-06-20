@@ -29,6 +29,12 @@ set formatoptions+=mM
 syntax enable
 syntax on
 
+" Colorscheme
+silent! colorscheme tomorrow
+
+" Font
+set guifont=Monaco:h16
+
 " Highlight current column and line
 set cursorcolumn
 set cursorline
