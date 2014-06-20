@@ -30,7 +30,7 @@ syntax enable
 syntax on
 
 " Colorscheme
-silent! colorscheme tomorrow
+silent! colorscheme desert256
 
 " Font
 set guifont=Monaco:h16
@@ -129,9 +129,27 @@ call vundle#begin()
 
 " Plugins
 Plugin 'scrooloose/nerdtree'
+Plugin 'itchyny/lightline.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 filetype plugin indent on
 
+" Lightline
+set laststatus=2
+
+" Tagbar
+let g:tagbar_autoclose=1
+let g:tagbar_autofocus=1
+let g:tagbar_compact=1
+let g:tagbar_singleclick=1
+let g:tagbar_iconchars=['+','-']
+let g:tagbar_sort=0
+let g:tagbar_show_linenumbers=1
+
 " Mappings
 noremap <silent> <Leader>1 :NERDTreeToggle<CR>
+noremap <silent> <Leader>2 :TagbarToggle<CR>
