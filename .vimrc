@@ -30,16 +30,10 @@ syntax enable
 syntax on
 
 " Colorscheme
-silent! colorscheme desert256
+colorscheme molokai
 
 " Font
 set guifont=Monaco:h16
-
-" Highlight current column and line
-set cursorcolumn
-set cursorline
-au BufLeave * set nocursorline nocursorcolumn
-au BufEnter * set cursorline cursorcolumn
 
 " Backspace
 set backspace=indent,eol,start
@@ -133,8 +127,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins
+Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'itchyny/lightline.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Raimondi/delimitMate'
@@ -143,6 +137,10 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'ciaranm/detectindent'
 Plugin 'kien/ctrlp.vim'
 Plugin 'justinmk/vim-sneak'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'vim-scripts/lastpos.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'ervandew/supertab'
 
 call vundle#end()
 filetype plugin indent on
