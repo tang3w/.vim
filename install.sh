@@ -10,7 +10,13 @@ if ! hash brew 2>/dev/null; then
     exit 1
 fi
 
-brew install ctags-exuberant
+if [ -z "$(brew ls --versions ctags-exuberant)"  ]; then
+    brew install ctags-exuberant
+fi
+
+if [ -z "$(brew ls --versions the_silver_searcher)"  ]; then
+    brew install the_silver_searcher
+fi
 
 pushd ~/.vim > /dev/null
 git submodule init

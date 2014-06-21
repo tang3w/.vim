@@ -131,7 +131,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'ciaranm/detectindent'
@@ -141,6 +140,11 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'vim-scripts/lastpos.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -163,12 +167,12 @@ let g:detectindent_preferred_indent=4
 let g:detectindent_max_lines_to_analyse=1024
 
 " Ctrlp
-let g:ctrlp_map="<Leader>3"
 let g:ctrlp_by_filename=1
 let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_new_file="t"
 
 " Mappings
-noremap <silent> <Leader>1 :NERDTreeToggle<CR>
-noremap <silent> <Leader>2 :TagbarToggle<CR>
+noremap <silent> <Leader>e :NERDTreeToggle<CR>
+noremap <silent> <Leader>f :CtrlP<CR>
+noremap <silent> <Leader>t :TagbarToggle<CR>
