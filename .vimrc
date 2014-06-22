@@ -145,6 +145,9 @@ Plugin 'Lokaltog/vim-easymotion'
 call vundle#end()
 filetype plugin indent on
 
+" NERDTree
+let g:NERDTreeShowHidden=1
+
 " Lightline
 set laststatus=2
 
