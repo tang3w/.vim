@@ -72,6 +72,10 @@ set number
 " Show ruler
 set ruler
 
+" Tab line
+set showtabline=2
+set guioptions-=e
+
 " Trailing whitespace
 autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
@@ -141,6 +145,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
+Plugin 'itchyny/lightline.vim'
 Plugin 'wikitopian/hardmode'
 
 call vundle#end()
@@ -148,6 +153,7 @@ filetype plugin indent on
 
 " NERDTree
 let g:NERDTreeShowHidden=1
+let g:NERDTreeQuitOnOpen=1
 
 " Lightline
 set laststatus=2
@@ -179,6 +185,15 @@ let g:aghighlight=1
 " Sneak
 let g:sneak#streak=1
 let g:sneak#use_ic_scs=1
+
+" Lightline
+let g:lightline = {}
+let g:lightline.tab = {
+    \ 'active'   : [ 'tabnum', 'filename', 'modified' ],
+    \ 'inactive' : [ 'tabnum', 'filename', 'modified' ] }
+let g:lightline.tabline = {
+    \ 'left'  : [ [ 'tabs' ] ],
+    \ 'right' : [ [ ] ] }
 
 " Hardmode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
