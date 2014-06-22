@@ -117,18 +117,6 @@ function! s:getUnit(line)
     return matchstr(getline(a:line), '\%'.virtcol('.').'v\%(\S\+\s\=\|.\)')
 endfunction
 
-imap <expr> <C-g>y <SID>getWord(<SID>prevL())
-imap <expr> <C-g><C-y> <SID>getWord(<SID>prevL())
-
-imap <expr> <C-g>e <SID>getWord(<SID>nextL())
-imap <expr> <C-g><C-e> <SID>getWord(<SID>nextL())
-
-imap <expr> <C-g>u <SID>getUnit(<SID>prevL())
-imap <expr> <C-g><C-u> <SID>getUnit(<SID>prevL())
-
-imap <expr> <C-g>r <SID>getUnit(<SID>nextL())
-imap <expr> <C-g><C-r> <SID>getUnit(<SID>nextL())
-
 " Vundle
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -143,7 +131,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'ciaranm/detectindent'
 Plugin 'kien/ctrlp.vim'
-Plugin 'justinmk/vim-sneak'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'vim-scripts/lastpos.vim'
 Plugin 'tpope/vim-fugitive'
@@ -153,6 +140,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'rking/ag.vim'
+Plugin 'Lokaltog/vim-easymotion'
 
 call vundle#end()
 filetype plugin indent on
@@ -183,8 +171,28 @@ let g:ctrlp_open_new_file="t"
 " Ag
 let g:aghighlight=1
 
+" Easymotion
+let g:EasyMotion_smartcase=1
+
 " Mappings
-noremap <silent> <Leader>e :NERDTreeToggle<CR>
-noremap <silent> <Leader>f :CtrlP<CR>
-noremap <silent> <Leader>t :TagbarToggle<CR>
-noremap <Leader>/ :Ag!<space>
+imap <expr> <C-g>y     <SID>getWord(<SID>prevL())
+imap <expr> <C-g><C-y> <SID>getWord(<SID>prevL())
+imap <expr> <C-g>e     <SID>getWord(<SID>nextL())
+imap <expr> <C-g><C-e> <SID>getWord(<SID>nextL())
+imap <expr> <C-g>u     <SID>getUnit(<SID>prevL())
+imap <expr> <C-g><C-u> <SID>getUnit(<SID>prevL())
+imap <expr> <C-g>r     <SID>getUnit(<SID>nextL())
+imap <expr> <C-g><C-r> <SID>getUnit(<SID>nextL())
+nmap w                 <Plug>(easymotion-w)
+nmap W                 <Plug>(easymotion-W)
+nmap e                 <Plug>(easymotion-e)
+nmap E                 <Plug>(easymotion-E)
+nmap b                 <Plug>(easymotion-b)
+nmap B                 <Plug>(easymotion-B)
+nmap ge                <Plug>(easymotion-ge)
+nmap gE                <Plug>(easymotion-gE)
+nmap s                 <Plug>(easymotion-s)
+nmap <Leader>e         :NERDTreeToggle<CR>
+nmap <Leader>f         :CtrlP<CR>
+nmap <Leader>t         :TagbarToggle<CR>
+nmap <Leader>/         :Ag!<space>
