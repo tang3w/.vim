@@ -20,6 +20,8 @@ set shiftwidth=4
 set cindent
 set autoindent
 set cinoptions=(sus
+set copyindent
+set preserveindent
 
 " Multi-bytes character
 set ambiwidth=double
@@ -39,9 +41,14 @@ set guifont=Monaco:h16
 set backspace=indent,eol,start
 
 " Search rules
-set is
 set hlsearch
+set incsearch
 set ignorecase
+set smartcase
+
+" Beep
+set visualbell
+set noerrorbells
 
 " Wrap and break
 set wrap
@@ -50,6 +57,7 @@ let &showbreak="↳ " " ↪
 set whichwrap=b,s,h,l,<,>,[,]
 
 " No swap file
+set nobackup
 set noswapfile
 
 " Enable fold
@@ -70,7 +78,7 @@ autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
 highlight EOLWS ctermbg=red guibg=red
 
 " Map leader
-let mapleader=" "
+let mapleader="\<Space>"
 
 " Use bash shell
 set shell=/bin/bash
@@ -172,7 +180,11 @@ let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_new_file="t"
 
+" Ag
+let g:aghighlight=1
+
 " Mappings
 noremap <silent> <Leader>e :NERDTreeToggle<CR>
 noremap <silent> <Leader>f :CtrlP<CR>
 noremap <silent> <Leader>t :TagbarToggle<CR>
+noremap <Leader>/ :Ag!<space>
