@@ -140,7 +140,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'rking/ag.vim'
-Plugin 'Lokaltog/vim-easymotion'
+Plugin 'justinmk/vim-sneak'
+Plugin 'wikitopian/hardmode'
 
 call vundle#end()
 filetype plugin indent on
@@ -166,6 +167,7 @@ let g:detectindent_preferred_indent=4
 let g:detectindent_max_lines_to_analyse=1024
 
 " Ctrlp
+let g:ctrlp_map=""
 let g:ctrlp_by_filename=1
 let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
@@ -174,28 +176,29 @@ let g:ctrlp_open_new_file="t"
 " Ag
 let g:aghighlight=1
 
-" Easymotion
-let g:EasyMotion_smartcase=1
+" Sneak
+let g:sneak#streak=1
+let g:sneak#use_ic_scs=1
+
+" Hardmode
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+let g:HardMode_hardmodeMsg="You are in hard mode!"
+let g:HardMode_easymodeMsg="You are free now!"
+let g:HardMode_level="wannabe"
 
 " Mappings
-imap <expr> <C-g>y     <SID>getWord(<SID>prevL())
-imap <expr> <C-g><C-y> <SID>getWord(<SID>prevL())
-imap <expr> <C-g>e     <SID>getWord(<SID>nextL())
-imap <expr> <C-g><C-e> <SID>getWord(<SID>nextL())
-imap <expr> <C-g>u     <SID>getUnit(<SID>prevL())
-imap <expr> <C-g><C-u> <SID>getUnit(<SID>prevL())
-imap <expr> <C-g>r     <SID>getUnit(<SID>nextL())
-imap <expr> <C-g><C-r> <SID>getUnit(<SID>nextL())
-nmap w                 <Plug>(easymotion-w)
-nmap W                 <Plug>(easymotion-W)
-nmap e                 <Plug>(easymotion-e)
-nmap E                 <Plug>(easymotion-E)
-nmap b                 <Plug>(easymotion-b)
-nmap B                 <Plug>(easymotion-B)
-nmap ge                <Plug>(easymotion-ge)
-nmap gE                <Plug>(easymotion-gE)
-nmap s                 <Plug>(easymotion-s)
-nmap <Leader>e         :NERDTreeToggle<CR>
-nmap <Leader>f         :CtrlP<CR>
-nmap <Leader>t         :TagbarToggle<CR>
-nmap <Leader>/         :Ag!<space>
+inoremap kj                <Esc>l
+inoremap jk                <Esc>l
+inoremap <expr> <C-g>y     <SID>getWord(<SID>prevL())
+inoremap <expr> <C-g><C-y> <SID>getWord(<SID>prevL())
+inoremap <expr> <C-g>e     <SID>getWord(<SID>nextL())
+inoremap <expr> <C-g><C-e> <SID>getWord(<SID>nextL())
+inoremap <expr> <C-g>u     <SID>getUnit(<SID>prevL())
+inoremap <expr> <C-g><C-u> <SID>getUnit(<SID>prevL())
+inoremap <expr> <C-g>r     <SID>getUnit(<SID>nextL())
+inoremap <expr> <C-g><C-r> <SID>getUnit(<SID>nextL())
+
+nmap     <Leader>e         :NERDTreeToggle<CR>
+nmap     <Leader>f         :CtrlP<CR>
+nmap     <Leader>t         :TagbarToggle<CR>
+nmap     <Leader>g         :Ag!<space>
