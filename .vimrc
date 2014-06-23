@@ -89,6 +89,9 @@ set noshowmode
 set showtabline=2
 set guioptions-=e
 
+" Virtual edit
+set virtualedit=onemore
+
 " Trailing whitespace
 autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
@@ -193,6 +196,10 @@ let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_new_file="t"
 
+" Auto pair
+let g:AutoPairsMapBS=0
+inoremap <buffer> <silent> <BS> <C-R>=AutoPairsDelete()<CR>
+
 " Ag
 let g:aghighlight=1
 
@@ -227,6 +234,10 @@ inoremap <expr> <C-g>u     <SID>getUnit(<SID>prevL())
 inoremap <expr> <C-g><C-u> <SID>getUnit(<SID>prevL())
 inoremap <expr> <C-g>r     <SID>getUnit(<SID>nextL())
 inoremap <expr> <C-g><C-r> <SID>getUnit(<SID>nextL())
+inoremap <C-l>             <C-o>l
+inoremap <C-h>             <C-o>h
+inoremap <C-j>             <C-o>j
+inoremap <C-k>             <C-o>k
 
 nmap     <Leader>e         :NERDTreeToggle<CR>
 nmap     <Leader>f         :CtrlP<CR>
