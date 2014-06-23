@@ -70,6 +70,12 @@ set whichwrap=b,s,h,l,<,>,[,]
 set nobackup
 set noswapfile
 
+" Auto read
+set autoread
+
+" Max undo times
+set history=1000
+
 " Enable fold
 set foldenable
 
@@ -110,7 +116,10 @@ let mapleader="\<Space>"
 set shell=/bin/bash
 
 " Auto source the .vimrc
-autocmd! BufWritePost .vimrc source ~/.vimrc
+augroup reload_vimrc
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
 
 " Copy previous or next nonblank line
 function! s:nextL()
@@ -170,6 +179,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'bling/vim-bufferline'
 Plugin 'itchyny/lightline.vim'
 Plugin 'wolf-dog/lightline-sceaduhelm.vim'
+Plugin 'vim-scripts/a.vim'
 Plugin 'wikitopian/hardmode'
 
 call vundle#end()
@@ -281,3 +291,5 @@ nmap     <Leader>t         :TagbarToggle<CR>
 nmap     <Leader>g         :Ag!<space>
 nmap     <Tab>             :bnext<CR>
 nmap     <S-Tab>           :bprevious<CR>
+nnoremap <silent> <C-L>    :nohlsearch<CR><C-L>
+nmap     Q                 <nop>
