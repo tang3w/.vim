@@ -46,6 +46,16 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Timeout
+if ! has('gui_running')
+set ttimeoutlen=10
+augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+augroup END
+endif
+
 " Beep
 set visualbell
 set noerrorbells
@@ -71,6 +81,9 @@ set number
 
 " Show ruler
 set ruler
+
+" No default mode
+set noshowmode
 
 " Tab line
 set showtabline=2
@@ -147,6 +160,7 @@ Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'itchyny/lightline.vim'
 Plugin 'wikitopian/hardmode'
+Plugin 'wolf-dog/lightline-sceaduhelm.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -188,6 +202,7 @@ let g:sneak#use_ic_scs=1
 
 " Lightline
 let g:lightline = {}
+let g:lightline.colorscheme = 'sceaduhelm'
 let g:lightline.tab = {
     \ 'active'   : [ 'tabnum', 'filename', 'modified' ],
     \ 'inactive' : [ 'tabnum', 'filename', 'modified' ] }
