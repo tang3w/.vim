@@ -51,7 +51,7 @@ if ! has('gui_running')
 set ttimeoutlen=10
 augroup FastEscape
     autocmd!
-    au InsertEnter * set timeoutlen=300
+    au InsertEnter * set timeoutlen=0
     au InsertLeave * set timeoutlen=1000
 augroup END
 endif
@@ -122,16 +122,6 @@ augroup reload_vimrc
 augroup END
 
 " Copy previous or next nonblank line
-function! s:nextL()
-    let lnum = line('.') + 1
-    while lnum <= line('$')
-        if match(getline(lnum), '^\s*$') < 0
-            return lnum
-        endif
-        let lnum = lunm + 1
-    endwhile
-    return 0
-endfunction
 
 function! s:prevL()
     let lnum = line('.') - 1
@@ -144,12 +134,19 @@ function! s:prevL()
     return 0
 endfunction
 
-function! s:getWord(line)
-    return matchstr(getline(a:line), '\%'.virtcol('.').'v\%(\w\+\s\=\|.\)')
+function! s:nextL()
+    let lnum = line('.') + 1
+    while lnum <= line('$')
+        if match(getline(lnum), '^\s*$') < 0
+            return lnum
+        endif
+        let lnum = lnum + 1
+    endwhile
+    return 0
 endfunction
 
-function! s:getUnit(line)
-    return matchstr(getline(a:line), '\%'.virtcol('.').'v\%(\S\+\s\=\|.\)')
+function! s:getWord(line)
+    return matchstr(getline(a:line), '\%'.virtcol('.').'v\%(\w\+\s\=\|.\)')
 endfunction
 
 " Vundle
@@ -212,10 +209,6 @@ let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_new_file="t"
 
-" Auto pair
-let g:AutoPairsMapBS=0
-inoremap <buffer> <silent> <BS> <C-R>=AutoPairsDelete()<CR>
-
 " Ag
 let g:aghighlight=1
 
@@ -227,6 +220,7 @@ let g:sneak#use_ic_scs=1
 let g:bufferline_echo=0
 let g:bufferline_active_buffer_left='➜ '
 let g:bufferline_active_buffer_right=''
+
 function! Bufferline()
     call bufferline#refresh_status()
     let b = g:bufferline_status_info.before
@@ -278,28 +272,18 @@ let g:HardMode_easymodeMsg="You are free now!"
 let g:HardMode_level="wannabe"
 
 " Mappings
-inoremap <expr> <C-g>y       <SID>getWord(<SID>prevL())
-inoremap <expr> <C-g><C-y>   <SID>getWord(<SID>prevL())
-inoremap <expr> <C-g>e       <SID>getWord(<SID>nextL())
-inoremap <expr> <C-g><C-e>   <SID>getWord(<SID>nextL())
-inoremap <expr> <C-g>u       <SID>getUnit(<SID>prevL())
-inoremap <expr> <C-g><C-u>   <SID>getUnit(<SID>prevL())
-inoremap <expr> <C-g>r       <SID>getUnit(<SID>nextL())
-inoremap <expr> <C-g><C-r>   <SID>getUnit(<SID>nextL())
-inoremap <C-l>               <C-o>l
-inoremap <C-h>               <C-o>h
-inoremap <C-j>               <C-o>j
-inoremap <C-k>               <C-o>k
+inoremap <expr> <C-y> <SID>getWord(<SID>prevL())
+inoremap <expr> <C-e> <SID>getWord(<SID>nextL())
 
 nmap     <silent> <Leader>e  :NERDTreeToggle<CR>
 nmap     <silent> <Leader>f  :CtrlP<CR>
 nmap     <silent> <Leader>t  :TagbarToggle<CR>
-nmap     <Leader>g           :Ag!<space>
+nmap     <silent> <Leader>a  :FSHere<CR>
+nmap              <Leader>g  :Ag!<space>
+nmap              <Leader>so :SessionOpen<Space>
+nmap              <Leader>ss :SessionSave<Space>
 nmap     <silent> <Tab>      :bnext<CR>
 nmap     <silent> <S-Tab>    :bprevious<CR>
-nmap     <silent> <Leader>a  :FSHere<CR>
-nmap     <Leader>so          :SessionOpen<Space>
-nmap     <Leader>ss          :SessionSave<Space>
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>:set nopaste<CR>
 nnoremap <silent> <C-l>      :nohlsearch<CR><C-l>
-nmap     Q                   <nop>
+nmap              Q          <nop>
