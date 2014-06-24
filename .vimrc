@@ -179,7 +179,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'bling/vim-bufferline'
 Plugin 'itchyny/lightline.vim'
 Plugin 'wolf-dog/lightline-sceaduhelm.vim'
-Plugin 'vim-scripts/a.vim'
+Plugin 'derekwyatt/vim-fswitch'
 Plugin 'wikitopian/hardmode'
 
 call vundle#end()
@@ -270,26 +270,27 @@ let g:HardMode_easymodeMsg="You are free now!"
 let g:HardMode_level="wannabe"
 
 " Mappings
-inoremap kj                <Esc>
-inoremap jk                <Esc>
-inoremap <expr> <C-g>y     <SID>getWord(<SID>prevL())
-inoremap <expr> <C-g><C-y> <SID>getWord(<SID>prevL())
-inoremap <expr> <C-g>e     <SID>getWord(<SID>nextL())
-inoremap <expr> <C-g><C-e> <SID>getWord(<SID>nextL())
-inoremap <expr> <C-g>u     <SID>getUnit(<SID>prevL())
-inoremap <expr> <C-g><C-u> <SID>getUnit(<SID>prevL())
-inoremap <expr> <C-g>r     <SID>getUnit(<SID>nextL())
-inoremap <expr> <C-g><C-r> <SID>getUnit(<SID>nextL())
-inoremap <C-l>             <C-o>l
-inoremap <C-h>             <C-o>h
-inoremap <C-j>             <C-o>j
-inoremap <C-k>             <C-o>k
+inoremap kj                 <Esc>
+inoremap jk                 <Esc>
+inoremap <expr> <C-g>y      <SID>getWord(<SID>prevL())
+inoremap <expr> <C-g><C-y>  <SID>getWord(<SID>prevL())
+inoremap <expr> <C-g>e      <SID>getWord(<SID>nextL())
+inoremap <expr> <C-g><C-e>  <SID>getWord(<SID>nextL())
+inoremap <expr> <C-g>u      <SID>getUnit(<SID>prevL())
+inoremap <expr> <C-g><C-u>  <SID>getUnit(<SID>prevL())
+inoremap <expr> <C-g>r      <SID>getUnit(<SID>nextL())
+inoremap <expr> <C-g><C-r>  <SID>getUnit(<SID>nextL())
+inoremap <C-l>              <C-o>l
+inoremap <C-h>              <C-o>h
+inoremap <C-j>              <C-o>j
+inoremap <C-k>              <C-o>k
 
-nmap     <Leader>e         :NERDTreeToggle<CR>
-nmap     <Leader>f         :CtrlP<CR>
-nmap     <Leader>t         :TagbarToggle<CR>
-nmap     <Leader>g         :Ag!<space>
-nmap     <Tab>             :bnext<CR>
-nmap     <S-Tab>           :bprevious<CR>
-nnoremap <silent> <C-L>    :nohlsearch<CR><C-L>
-nmap     Q                 <nop>
+nmap     <Leader>e          :NERDTreeToggle<CR>
+nmap     <Leader>f          :CtrlP<CR>
+nmap     <Leader>t          :TagbarToggle<CR>
+nmap     <Leader>g          :Ag!<space>
+nmap     <Tab>              :bnext<CR>
+nmap     <S-Tab>            :bprevious<CR>
+nnoremap <silent> <C-L>     :nohlsearch<CR><C-L>
+nmap     <silent> <Leader>a :FSHere<CR>
+nmap     Q                  <nop>
