@@ -278,8 +278,6 @@ let g:HardMode_easymodeMsg="You are free now!"
 let g:HardMode_level="wannabe"
 
 " Mappings
-inoremap kj                  <Esc>
-inoremap jk                  <Esc>
 inoremap <expr> <C-g>y       <SID>getWord(<SID>prevL())
 inoremap <expr> <C-g><C-y>   <SID>getWord(<SID>prevL())
 inoremap <expr> <C-g>e       <SID>getWord(<SID>nextL())
