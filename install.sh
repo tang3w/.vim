@@ -32,8 +32,19 @@ else
 fi
 
 pushd ~/.vim > /dev/null
+
 git submodule init
 git submodule update
+
+if [ ! -f .git/hooks/post-merge ]
+then
+    action="#!/bin/bash"
+    action="${action}\nvim +PluginClean! +PluginInstall +qall 2>/dev/null"
+    action="${action}\necho 'Done!'"
+    echo -e ${action} > .git/hooks/post-merge
+    chmod +x .git/hooks/post-merge
+fi
+
 popd > /dev/null
 
 vim +PluginInstall +qall
