@@ -213,6 +213,9 @@ let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_new_file="t"
 
+" Syntastic
+let g:syntastic_check_on_open=1
+
 " Ag
 let g:aghighlight=1
 
