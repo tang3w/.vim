@@ -3,11 +3,7 @@
 How to install
 --------------
 
-Just clone the repository into your home directory:
+Just run the following command:
 
-    git clone git@github.com:tang3w/.vim.git ~/.vim
-
-Then, just run the installation script:
-
-    ~/.vim/install.sh
+    git clone git@github.com:tang3w/.vim.git ~/.vim; ~/.vim/install.sh
 
