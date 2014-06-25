@@ -182,6 +182,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
+Plugin 'tpope/vim-dispatch'
 Plugin 'wikitopian/hardmode'
 
 call vundle#end()
