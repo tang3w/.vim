@@ -179,6 +179,8 @@ Plugin 'wolf-dog/lightline-sceaduhelm.vim'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-expand-region'
 Plugin 'wikitopian/hardmode'
 
 call vundle#end()
@@ -280,6 +282,7 @@ nmap     <silent> <Leader>f  :CtrlP<CR>
 nmap     <silent> <Leader>t  :TagbarToggle<CR>
 nmap     <silent> <Leader>a  :FSHere<CR>
 nmap              <Leader>g  :Ag!<space>
+nnoremap          <Leader>b  :ls<CR>:b<space>
 nmap              <Leader>so :SessionOpen<Space>
 nmap              <Leader>ss :SessionSave<Space>
 nmap     <silent> <Tab>      :bnext<CR>
