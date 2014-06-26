@@ -51,7 +51,7 @@ if ! has('gui_running')
 set ttimeoutlen=10
 augroup FastEscape
     autocmd!
-    au InsertEnter * set timeoutlen=0
+    au InsertEnter * set timeoutlen=1000
     au InsertLeave * set timeoutlen=1000
 augroup END
 endif
@@ -183,6 +183,8 @@ Plugin 'xolox/vim-session'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-dispatch'
+Plugin 'mattn/emmet-vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'wikitopian/hardmode'
 
 call vundle#end()
@@ -271,6 +273,12 @@ let g:session_autosave='yes'
 let g:session_autoload='no'
 let g:session_verbose_messages=0
 let g:session_command_aliases=1
+
+" Emmet
+let g:user_emmet_leader_key='<C-l>'
+
+" Ultisnips
+let g:UltiSnipsSnippetDirectories=['vim-snippets']
 
 " Hardmode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
