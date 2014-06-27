@@ -35,7 +35,7 @@ syntax on
 colorscheme molokai
 
 " Font
-set guifont=Monaco:h16
+set guifont=Monaco:h14
 
 " Backspace
 set backspace=indent,eol,start
@@ -109,6 +109,12 @@ autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
 highlight EOLWS ctermbg=red guibg=red
 
+" Max text width
+if exists('+colorcolumn')
+    let &colorcolumn=join(range(80,999),",")
+    highlight ColorColumn ctermbg=234 guibg=#262626
+endif
+
 " Map leader
 let mapleader="\<Space>"
 
@@ -176,7 +182,6 @@ Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'bling/vim-bufferline'
 Plugin 'itchyny/lightline.vim'
-Plugin 'wolf-dog/lightline-sceaduhelm.vim'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
@@ -251,7 +256,6 @@ endfunction
 
 " Lightline
 let g:lightline = {
-\    'colorscheme': 'sceaduhelm',
 \    'component_function': {
 \        'bufferline': 'Bufferline'
 \    },
