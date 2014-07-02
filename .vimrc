@@ -190,6 +190,7 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-dispatch'
 Plugin 'mattn/emmet-vim'
 Plugin 'SirVer/ultisnips'
+Plugin 'csexton/jekyll.vim'
 Plugin 'wikitopian/hardmode'
 
 call vundle#end()
@@ -283,6 +284,10 @@ let g:user_emmet_leader_key='<C-e>'
 
 " Ultisnips
 let g:UltiSnipsSnippetDirectories=['vim-snippets']
+
+" Jekyll
+let g:jekyll_post_published='false'
+let g:jekyll_path='~/Workspace/Repository/tang3w.github.com'
 
 " Hardmode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
