@@ -19,7 +19,7 @@ set shiftwidth=4
 " Indent
 set cindent
 set autoindent
-set cinoptions=(sus
+set cinoptions=(sus,L0
 set copyindent
 set preserveindent
 
