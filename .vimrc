@@ -95,6 +95,10 @@ set noshowmode
 set showtabline=2
 set guioptions-=e
 
+" Make tab character visiable
+set list
+set listchars=tab:‣-
+
 " Status line
 set laststatus=2
 
