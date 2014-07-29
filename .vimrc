@@ -174,6 +174,7 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'ciaranm/detectindent'
 Plugin 'kien/ctrlp.vim'
 Plugin 'myusuf3/numbers.vim'
+Plugin 'kshenoy/vim-signature'
 Plugin 'vim-scripts/lastpos.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
@@ -224,6 +225,9 @@ let g:ctrlp_by_filename=1
 let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_new_file="t"
+
+" SuperTab
+let g:SuperTabDefaultCompletionType="context"
 
 " Syntastic
 let g:syntastic_check_on_open=1
