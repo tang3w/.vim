@@ -125,6 +125,9 @@ let mapleader="\<Space>"
 " Use bash shell
 set shell=/bin/bash
 
+" Word list
+set dictionary=~/.vim/resource/words
+
 " Auto source the .vimrc
 augroup reload_vimrc
     autocmd!
