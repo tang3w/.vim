@@ -310,6 +310,8 @@ let g:HardMode_level="wannabe"
 inoremap <expr> <C-y> <SID>getWord(<SID>prevL())
 inoremap <expr> <C-e> <SID>getWord(<SID>nextL())
 
+nnoremap j                   gj
+nnoremap k                   gk
 nmap     <silent> <Leader>e  :NERDTreeToggle<CR>
 nmap     <silent> <Leader>f  :CtrlP<CR>
 nmap     <silent> <Leader>t  :TagbarToggle<CR>
@@ -323,3 +325,5 @@ nmap     <silent> <S-Tab>    :bprevious<CR>
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>:set nopaste<CR>
 nnoremap <silent> <C-l>      :nohlsearch<CR><C-l>
 nmap              Q          <nop>
+cnoremap <C-a>               <Home>
+cnoremap <C-e>               <End>
