@@ -293,7 +293,7 @@ let g:session_verbose_messages=0
 let g:session_command_aliases=1
 
 " Emmet
-let g:user_emmet_leader_key='<C-e>'
+let g:user_emmet_leader_key='<C-k>'
 
 " Ultisnips
 let g:UltiSnipsSnippetDirectories=['vim-snippets']
