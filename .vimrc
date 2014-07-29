@@ -232,6 +232,7 @@ let g:ctrlp_open_new_file="t"
 
 " SuperTab
 let g:SuperTabDefaultCompletionType="context"
+let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
 
 " Syntastic
 let g:syntastic_check_on_open=1
