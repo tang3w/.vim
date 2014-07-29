@@ -127,6 +127,7 @@ set shell=/bin/bash
 
 " Word list
 set dictionary=~/.vim/resource/words
+set infercase
 
 " Auto source the .vimrc
 augroup reload_vimrc
