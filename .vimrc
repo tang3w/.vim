@@ -236,6 +236,7 @@ let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
 
 " Syntastic
 let g:syntastic_check_on_open=1
+let g:syntastic_python_checkers=['pep8', 'pyflakes']
 
 " Ag
 let g:aghighlight=1
