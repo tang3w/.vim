@@ -262,9 +262,14 @@ function! Bufferline()
     let w = winwidth(0) * 4 / 11
     if w < alen+blen+clen
         let whalf = (w - strlen(c)) / 2
-        let aa = alen > whalf && blen > whalf ? a[:whalf] : alen + blen < w - clen || alen < whalf ? a : a[:(w - clen - blen)]
-        let bb = alen > whalf && blen > whalf ? b[-(whalf):] : alen + blen < w - clen || blen < whalf ? b : b[-(w - clen - alen):]
-        return (strlen(bb) < strlen(b) ? '...' : '') . bb . c . aa . (strlen(aa) < strlen(a) ? '...' : '')
+        let aa = alen > whalf && blen > whalf ?
+\                a[:whalf] : alen + blen < w - clen || alen < whalf ?
+\                a : a[:(w - clen - blen)]
+        let bb = alen > whalf && blen > whalf ?
+\                b[-(whalf):] : alen + blen < w - clen || blen < whalf ?
+\                b : b[-(w - clen - alen):]
+        return (strlen(bb) < strlen(b) ? '...' : '') . bb . c . aa .
+\              (strlen(aa) < strlen(a) ? '...' : '')
     else
         return b . c . a
     endif
