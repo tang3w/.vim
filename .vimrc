@@ -295,6 +295,7 @@ let g:session_verbose_messages=0
 let g:session_command_aliases=1
 
 " Emmet
+let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-k>'
 
 " Ultisnips
@@ -328,6 +329,10 @@ nmap     <silent> <Tab>      :bnext<CR>
 nmap     <silent> <S-Tab>    :bprevious<CR>
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>:set nopaste<CR>
 nnoremap <silent> <C-l>      :nohlsearch<CR><C-l>
+nmap     <C-j>               <C-w>j
+nmap     <C-k>               <C-w>k
+nmap     <C-l>               <C-w>l
+nmap     <C-h>               <C-w>h
 nmap              Q          <nop>
 cnoremap <C-a>               <Home>
 cnoremap <C-e>               <End>
