@@ -51,14 +51,21 @@ if ! has('gui_running')
 set ttimeoutlen=10
 augroup FastEscape
     autocmd!
-    au InsertEnter * set timeoutlen=1000
-    au InsertLeave * set timeoutlen=1000
+    autocmd InsertEnter * set timeoutlen=1000
+    autocmd InsertLeave * set timeoutlen=1000
 augroup END
 endif
 
 " Beep
 set visualbell
 set noerrorbells
+
+" Highlight current line
+augroup CursorLine
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
 
 " Wrap and break
 set wrap
@@ -320,27 +327,22 @@ let g:HardMode_easymodeMsg="You are free now!"
 let g:HardMode_level="wannabe"
 
 " Mappings
-inoremap <expr> <C-y> <SID>getWord(<SID>prevL())
-inoremap <expr> <C-e> <SID>getWord(<SID>nextL())
+cnoremap          <C-a>      <Home>
+cnoremap          <C-e>      <End>
 
-nnoremap j                   gj
-nnoremap k                   gk
+inoremap <expr>   <C-y>      <SID>getWord(<SID>prevL())
+inoremap <expr>   <C-e>      <SID>getWord(<SID>nextL())
+
+nmap     <silent> <Tab>      :bnext<CR>
+nmap     <silent> <S-Tab>    :bprevious<CR>
 nmap     <silent> <Leader>e  :NERDTreeToggle<CR>
 nmap     <silent> <Leader>f  :CtrlP<CR>
 nmap     <silent> <Leader>t  :TagbarToggle<CR>
 nmap     <silent> <Leader>a  :FSHere<CR>
 nmap              <Leader>g  :Ag!<space>
 nnoremap          <Leader>b  :ls<CR>:b<space>
-nmap              <Leader>so :SessionOpen<Space>
-nmap              <Leader>ss :SessionSave<Space>
-nmap     <silent> <Tab>      :bnext<CR>
-nmap     <silent> <S-Tab>    :bprevious<CR>
-nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>:set nopaste<CR>
+nnoremap <silent> <Esc><Esc> :nohlsearch<CR>:set nopaste<CR><C-l>
 nnoremap <silent> <C-l>      :nohlsearch<CR><C-l>
-nmap     <C-j>               <C-w>j
-nmap     <C-k>               <C-w>k
-nmap     <C-l>               <C-w>l
-nmap     <C-h>               <C-w>h
-nmap              Q          <nop>
-cnoremap <C-a>               <Home>
-cnoremap <C-e>               <End>
+nnoremap          Q          <Nop>
+nnoremap          j          gj
+nnoremap          k          gk
