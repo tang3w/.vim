@@ -211,7 +211,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'b4winckler/vim-angry'
 Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
-Plugin 'bling/vim-bufferline'
+Plugin 'mihaifm/bufstop'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
@@ -311,7 +311,7 @@ nmap     <silent> <Leader>f  :CtrlP<CR>
 nmap     <silent> <Leader>t  :TagbarToggle<CR>
 nmap     <silent> <Leader>a  :FSHere<CR>
 nmap              <Leader>g  :Ag!<space>
-nmap              <Leader>b  :ls<CR>:b<space>
+nmap              <Leader>b  :BufstopFast<CR>
 nmap     <silent> <Leader>u  :GundoToggle<CR>
 map      <silent> <Leader>/  <plug>NERDCommenterToggle
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>:set nopaste<CR><C-l>
