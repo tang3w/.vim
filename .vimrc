@@ -32,7 +32,7 @@ syntax enable
 syntax on
 
 " Colorscheme
-colorscheme molokai
+colorscheme Tomorrow
 
 " Font
 set guifont=Monaco:h14
@@ -123,7 +123,6 @@ highlight EOLWS ctermbg=red guibg=red
 " Max text width
 if exists('+colorcolumn')
     let &colorcolumn=join(range(80,999),",")
-    highlight ColorColumn ctermbg=234 guibg=#262626
 endif
 
 " Map leader
@@ -201,7 +200,6 @@ Plugin 'b4winckler/vim-angry'
 Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'bling/vim-bufferline'
-Plugin 'itchyny/lightline.vim'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
@@ -263,51 +261,8 @@ let g:sneak#streak=1
 let g:sneak#use_ic_scs=1
 
 " Bufferline
-let g:bufferline_echo=0
 let g:bufferline_active_buffer_left='➜ '
 let g:bufferline_active_buffer_right=''
-
-function! Bufferline()
-    call bufferline#refresh_status()
-    let b = g:bufferline_status_info.before
-    let c = g:bufferline_status_info.current
-    let a = g:bufferline_status_info.after
-    let alen = strlen(a)
-    let blen = strlen(b)
-    let clen = strlen(c)
-    let w = winwidth(0) * 4 / 11
-    if w < alen+blen+clen
-        let whalf = (w - strlen(c)) / 2
-        let aa = alen > whalf && blen > whalf ?
-\                a[:whalf] : alen + blen < w - clen || alen < whalf ?
-\                a : a[:(w - clen - blen)]
-        let bb = alen > whalf && blen > whalf ?
-\                b[-(whalf):] : alen + blen < w - clen || blen < whalf ?
-\                b : b[-(w - clen - alen):]
-        return (strlen(bb) < strlen(b) ? '...' : '') . bb . c . aa .
-\              (strlen(aa) < strlen(a) ? '...' : '')
-    else
-        return b . c . a
-    endif
-endfunction
-
-" Lightline
-let g:lightline = {
-\    'component_function': {
-\        'bufferline': 'Bufferline'
-\    },
-\    'active': {
-\        'left': [ [ 'mode', 'paste'  ], [ 'filename'  ], [ 'bufferline' ] ]
-\    },
-\    'tab': {
-\        'active': [ 'tabnum', 'filename', 'modified' ],
-\        'inactive': [ 'tabnum', 'filename', 'modified' ]
-\    },
-\    'tabline': {
-\        'left': [ [ 'tabs' ] ],
-\        'right': [ [ ] ]
-\    }
-\}
 
 " Session
 let g:session_autosave='yes'
