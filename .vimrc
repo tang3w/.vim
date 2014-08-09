@@ -189,6 +189,7 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'vim-scripts/lastpos.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'sjl/gundo.vim'
 Plugin 'ervandew/supertab'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
@@ -226,7 +227,9 @@ let g:tagbar_compact=1
 let g:tagbar_singleclick=1
 let g:tagbar_iconchars=['+','-']
 let g:tagbar_sort=0
-let g:tagbar_show_linenumbers=1
+
+" NerdCommenter
+let NERDSpaceDelims = 1
 
 " Detectindent
 let g:detectindent_preferred_expandtab=1
@@ -239,6 +242,10 @@ let g:ctrlp_by_filename=1
 let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_new_file="t"
+
+" GUndo
+let g:gundo_right=1
+let g:gundo_close_on_revert=1
 
 " SuperTab
 let g:SuperTabDefaultCompletionType="context"
@@ -339,7 +346,9 @@ nmap     <silent> <Leader>f  :CtrlP<CR>
 nmap     <silent> <Leader>t  :TagbarToggle<CR>
 nmap     <silent> <Leader>a  :FSHere<CR>
 nmap              <Leader>g  :Ag!<space>
-nnoremap          <Leader>b  :ls<CR>:b<space>
+nmap              <Leader>b  :ls<CR>:b<space>
+nmap     <silent> <Leader>u  :GundoToggle<CR>
+map      <silent> <Leader>/  <plug>NERDCommenterToggle
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>:set nopaste<CR><C-l>
 nnoremap <silent> <C-l>      :nohlsearch<CR><C-l>
 nnoremap          Q          <Nop>
