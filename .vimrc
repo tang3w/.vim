@@ -82,7 +82,7 @@ augroup END
 " Wrap and break
 set wrap
 set linebreak
-let &showbreak="↳ " " ↪
+let &showbreak="↳ "
 set whichwrap=b,s,h,l,<,>,[,]
 
 " No swap file
@@ -111,7 +111,7 @@ set ruler
 set noshowmode
 
 " Tab line
-set showtabline=2
+set showtabline=1
 set guioptions-=e
 
 " Make tab character visiable
@@ -255,7 +255,7 @@ let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_new_file="t"
 
-" GUndo
+" Gundo
 let g:gundo_right=1
 let g:gundo_close_on_revert=1
 
