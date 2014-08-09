@@ -211,6 +211,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'csexton/jekyll.vim'
 Plugin 'wikitopian/hardmode'
 
+Plugin 'hynek/vim-python-pep8-indent'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -259,10 +261,6 @@ let g:aghighlight=1
 " Sneak
 let g:sneak#streak=1
 let g:sneak#use_ic_scs=1
-
-" Bufferline
-let g:bufferline_active_buffer_left='➜ '
-let g:bufferline_active_buffer_right=''
 
 " Session
 let g:session_autosave='yes'
