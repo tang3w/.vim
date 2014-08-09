@@ -218,12 +218,14 @@ Plugin 'xolox/vim-session'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-dispatch'
+Plugin 'thinca/vim-quickrun'
 Plugin 'mattn/emmet-vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'csexton/jekyll.vim'
 Plugin 'wikitopian/hardmode'
 
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'tpope/vim-endwise'
 
 call vundle#end()
 filetype plugin indent on
@@ -241,7 +243,7 @@ let g:tagbar_iconchars=['+','-']
 let g:tagbar_sort=0
 
 " NerdCommenter
-let NERDSpaceDelims = 1
+let NERDSpaceDelims=1
 
 " Detectindent
 let g:detectindent_preferred_expandtab=1
@@ -280,6 +282,14 @@ let g:session_autoload='no'
 let g:session_verbose_messages=0
 let g:session_command_aliases=1
 
+" Quickrun
+let g:quickrun_config={}
+let g:quickrun_config["_"]={
+    \   'outputter/buffer/split': ':botright 8sp',
+    \   'outputter/buffer/close_on_empty': 1,
+    \   'outputter/buffer/into': 1,
+    \ }
+
 " Emmet
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-k>'
@@ -312,6 +322,7 @@ nmap     <silent> <Leader>t  :TagbarToggle<CR>
 nmap     <silent> <Leader>a  :FSHere<CR>
 nmap              <Leader>g  :Ag!<space>
 nmap              <Leader>b  :BufstopFast<CR>
+map      <silent> <Leader>r  <Plug>(quickrun)
 nmap     <silent> <Leader>u  :GundoToggle<CR>
 map      <silent> <Leader>/  <plug>NERDCommenterToggle
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>:set nopaste<CR><C-l>
