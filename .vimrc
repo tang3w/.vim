@@ -290,6 +290,11 @@ let g:quickrun_config["_"]={
     \   'outputter/buffer/into': 1,
     \ }
 
+augroup QuickRun
+    autocmd!
+    autocmd BufNew,BufEnter *quickrun* setlocal nonumber norelativenumber
+augroup END
+
 " Emmet
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-k>'
