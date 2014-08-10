@@ -207,6 +207,7 @@ Plugin 'b4winckler/vim-angry'
 Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'mihaifm/bufstop'
+Plugin 'vim-scripts/bufkill.vim'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
@@ -262,7 +263,9 @@ let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
 
 " Syntastic
 let g:syntastic_check_on_open=1
-let g:syntastic_python_checkers=['pep8', 'pyflakes']
+let g:syntastic_aggregate_errors=1
+let g:syntastic_python_checkers=['pyflakes', 'pep8']
+let g:syntastic_javascript_checkers=['jshint']
 
 " Ag
 let g:aghighlight=1
@@ -324,6 +327,7 @@ nmap              <Leader>g  :Ag!<space>
 nmap              <Leader>b  :BufstopFast<CR>
 map      <silent> <Leader>r  <Plug>(quickrun)
 nmap     <silent> <Leader>u  :GundoToggle<CR>
+nmap     <silent> <Leader>x  :BD<CR>
 map      <silent> <Leader>/  <plug>NERDCommenterToggle
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>:set nopaste<CR><C-l>
 nnoremap <silent> <C-l>      :nohlsearch<CR><C-l>
