@@ -132,11 +132,6 @@ autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
 highlight EOLWS ctermbg=red guibg=red
 
-" Max text width
-if exists('+colorcolumn')
-    let &colorcolumn=join(range(80,999),",")
-endif
-
 " Map leader
 let mapleader="\<Space>"
 
