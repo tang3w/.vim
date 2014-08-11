@@ -264,6 +264,7 @@ let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
 " Syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_aggregate_errors=1
+let g:syntastic_enable_highlighting=0
 let g:syntastic_python_checkers=['pyflakes', 'pep8']
 let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_ruby_checkers=['rubocop']
@@ -322,6 +323,9 @@ autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 let g:HardMode_hardmodeMsg="You are in hard mode!"
 let g:HardMode_easymodeMsg="You are free now!"
 let g:HardMode_level="wannabe"
+
+" File types
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2  softtabstop=2
 
 " Mappings
 cnoremap          <C-a>      <Home>
