@@ -325,7 +325,11 @@ let g:HardMode_easymodeMsg="You are free now!"
 let g:HardMode_level="wannabe"
 
 " File types
-autocmd FileType ruby setlocal tabstop=2 shiftwidth=2  softtabstop=2
+function s:ExpandTabTo2Space()
+    setlocal tabstop=2 shiftwidth=2 softtabstop=2
+endfunction
+
+autocmd FileType ruby,javascript,css,html call s:ExpandTabTo2Space()
 
 " Mappings
 cnoremap          <C-a>      <Home>
