@@ -268,6 +268,18 @@ let g:syntastic_python_checkers=['pyflakes', 'pep8']
 let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_ruby_checkers=['rubocop']
 
+set updatetime=500
+
+function s:AutoSave()
+    if &modifiable && &modified
+        echo ''
+        silent! noautocmd write
+        SyntasticCheck
+    endif
+endfunction
+
+autocmd InsertLeave,CursorHold * call s:AutoSave()
+
 " Ag
 let g:aghighlight=1
 
