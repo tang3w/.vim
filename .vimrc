@@ -349,7 +349,7 @@ nmap              <Leader>g  :Ag!<space>
 nmap              <Leader>b  :BufstopFast<CR>
 map      <silent> <Leader>r  <Plug>(quickrun)
 nmap     <silent> <Leader>u  :GundoToggle<CR>
-nmap     <silent> <Leader>x  :Bdelete<CR>
+nmap     <silent> <Leader>q  :Bdelete<CR>
 nmap     <silent> <Leader>m  :MRU<CR>
 map      <silent> <Leader>/  <plug>NERDCommenterToggle
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>:set nopaste<CR><C-l>
