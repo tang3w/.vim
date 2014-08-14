@@ -207,6 +207,7 @@ Plugin 'b4winckler/vim-angry'
 Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'mihaifm/bufstop'
+Plugin 'yegappan/mru'
 Plugin 'moll/vim-bbye'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'xolox/vim-misc'
@@ -349,6 +350,7 @@ nmap              <Leader>b  :BufstopFast<CR>
 map      <silent> <Leader>r  <Plug>(quickrun)
 nmap     <silent> <Leader>u  :GundoToggle<CR>
 nmap     <silent> <Leader>x  :Bdelete<CR>
+nmap     <silent> <Leader>m  :MRU<CR>
 map      <silent> <Leader>/  <plug>NERDCommenterToggle
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>:set nopaste<CR><C-l>
 nnoremap <silent> <C-l>      :nohlsearch<CR><C-l>
