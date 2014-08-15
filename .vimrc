@@ -95,6 +95,9 @@ set autoread
 " Max undo times
 set history=1000
 
+" Cursor hold time
+set updatetime=800
+
 " Enable fold
 set foldenable
 
@@ -270,11 +273,8 @@ let g:syntastic_python_checkers=['pyflakes', 'pep8']
 let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_ruby_checkers=['rubocop']
 
-set updatetime=500
-
 function s:AutoSave()
     if &modifiable && &modified
-        echo ''
         silent! noautocmd write
         SyntasticCheck
     endif
@@ -341,16 +341,16 @@ inoremap <expr>   <C-e>      <SID>getWord(<SID>nextL())
 
 nmap     <silent> <Tab>      :bnext<CR>
 nmap     <silent> <S-Tab>    :bprevious<CR>
+nmap     <silent> <Leader>a  :FSHere<CR>
+nmap              <Leader>b  :BufstopFast<CR>
 nmap     <silent> <Leader>e  :NERDTreeToggle<CR>
 nmap     <silent> <Leader>f  :CtrlP<CR>
-nmap     <silent> <Leader>t  :TagbarToggle<CR>
-nmap     <silent> <Leader>a  :FSHere<CR>
 nmap              <Leader>g  :Ag!<space>
-nmap              <Leader>b  :BufstopFast<CR>
-map      <silent> <Leader>r  <Plug>(quickrun)
-nmap     <silent> <Leader>u  :GundoToggle<CR>
-nmap     <silent> <Leader>q  :Bdelete<CR>
 nmap     <silent> <Leader>m  :MRU<CR>
+nmap     <silent> <Leader>q  :Bdelete<CR>
+map      <silent> <Leader>r  <Plug>(quickrun)
+nmap     <silent> <Leader>t  :TagbarToggle<CR>
+nmap     <silent> <Leader>u  :GundoToggle<CR>
 map      <silent> <Leader>/  <plug>NERDCommenterToggle
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>:set nopaste<CR><C-l>
 nnoremap <silent> <C-l>      :nohlsearch<CR><C-l>
