@@ -43,8 +43,12 @@ endif
 syntax enable
 syntax on
 
+" Gruvbox colorscheme fix
+let g:gruvbox_italic=0
+
 " Colorscheme
-colorscheme Tomorrow
+set background=dark
+colorscheme gruvbox
 
 " Font
 set guifont=Monaco:h14
@@ -144,12 +148,6 @@ set shell=/bin/bash
 " Word list
 set dictionary=~/.vim/resource/words
 set infercase
-
-" Auto source the .vimrc
-augroup reload_vimrc
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END
 
 " Copy previous or next nonblank line
 
