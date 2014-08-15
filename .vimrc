@@ -51,7 +51,7 @@ set background=dark
 colorscheme gruvbox
 
 " Font
-set guifont=Monaco:h14
+set guifont=Monaco:h16
 
 " Backspace
 set backspace=indent,eol,start
