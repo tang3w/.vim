@@ -73,7 +73,7 @@ augroup END
 endif
 
 " Beep
-set visualbell
+set visualbell t_vb=
 set noerrorbells
 
 " Highlight current line
