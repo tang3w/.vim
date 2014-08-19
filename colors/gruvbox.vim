@@ -515,10 +515,10 @@ hi! link EasyMotionShade Comment
 " }}}
 " Sneak: {{{
 
-hi! link SneakPluginTarget Search
-hi! link SneakStreakTarget Search
-call s:HL('SneakStreakMask', 'yellow', 'yellow')
-hi! link SneakStreakStatusLine Search
+hi! SneakPluginTarget     ctermfg=81   ctermbg=NONE cterm=underline guifg=#5fd7ff guibg=NONE gui=underline
+hi! SneakStreakTarget     ctermfg=81   ctermbg=NONE cterm=underline guifg=#5fd7ff guibg=NONE gui=underline
+hi! SneakStreakMask       ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE    guibg=NONE gui=underline
+hi! link SneakStreakStatusLine StatusLine
 
 " }}}
 " Indent Guides: {{{

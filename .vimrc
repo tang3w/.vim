@@ -351,6 +351,12 @@ nmap     <silent> <Leader>u  :GundoToggle<CR>
 map      <silent> <Leader>/  <plug>NERDCommenterToggle
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>:set nopaste<CR><C-l>
 nnoremap <silent> <C-l>      :nohlsearch<CR><C-l>
+nmap              f          <Plug>Sneak_f
+nmap              F          <Plug>Sneak_F
+xmap              f          <Plug>Sneak_f
+xmap              F          <Plug>Sneak_F
+omap              f          <Plug>Sneak_f
+omap              F          <Plug>Sneak_F
 nnoremap          Q          <Nop>
 nnoremap          j          gj
 nnoremap          k          gk
