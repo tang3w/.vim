@@ -336,6 +336,14 @@ cnoremap          <C-e>      <End>
 inoremap <expr>   <C-y>      <SID>getWord(<SID>prevL())
 inoremap <expr>   <C-e>      <SID>getWord(<SID>nextL())
 
+function s:refresh()
+    nohlsearch
+    if sneak#is_sneaking()
+        call sneak#cancel()
+    endif
+    redraw!
+endfunction
+
 nmap     <silent> <Tab>      :bnext<CR>
 nmap     <silent> <S-Tab>    :bprevious<CR>
 nmap     <silent> <Leader>a  :FSHere<CR>
@@ -349,8 +357,8 @@ map      <silent> <Leader>r  <Plug>(quickrun)
 nmap     <silent> <Leader>t  :TagbarToggle<CR>
 nmap     <silent> <Leader>u  :GundoToggle<CR>
 map      <silent> <Leader>/  <plug>NERDCommenterToggle
-nnoremap <silent> <Esc><Esc> :nohlsearch<CR>:set nopaste<CR><C-l>
-nnoremap <silent> <C-l>      :nohlsearch<CR><C-l>
+nnoremap <silent> <Esc><Esc> :call <SID>refresh()<CR>:set nopaste<CR>
+nnoremap <silent> <C-l>      :call <SID>refresh()<CR>
 nmap              f          <Plug>Sneak_f
 nmap              F          <Plug>Sneak_F
 xmap              f          <Plug>Sneak_f
