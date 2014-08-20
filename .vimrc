@@ -270,14 +270,14 @@ let g:syntastic_python_checkers=['pyflakes', 'pep8']
 let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_ruby_checkers=['rubocop']
 
-function s:AutoSave()
+function s:autoSave()
     if &modifiable && &modified
         silent! noautocmd write
         SyntasticCheck
     endif
 endfunction
 
-autocmd InsertLeave,CursorHold * call s:AutoSave()
+autocmd InsertLeave,CursorHold * call s:autoSave()
 
 " Ag
 let g:aghighlight=1
@@ -323,11 +323,11 @@ let g:HardMode_easymodeMsg="You are free now!"
 let g:HardMode_level="wannabe"
 
 " File types
-function s:ExpandTabTo2Space()
+function s:expandTabTo2Space()
     setlocal tabstop=2 shiftwidth=2 softtabstop=2
 endfunction
 
-autocmd FileType ruby,javascript,css,html call s:ExpandTabTo2Space()
+autocmd FileType ruby,javascript,css,html call s:expandTabTo2Space()
 
 " Mappings
 cnoremap          <C-a>      <Home>
@@ -337,7 +337,7 @@ inoremap <expr>   <C-y>      <SID>getWord(<SID>prevL())
 inoremap <expr>   <C-e>      <SID>getWord(<SID>nextL())
 
 function s:refresh()
-    nohlsearch
+    let @/ = ""
     if sneak#is_sneaking()
         call sneak#cancel()
     endif
