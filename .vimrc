@@ -341,7 +341,6 @@ function s:refresh()
     if sneak#is_sneaking()
         call sneak#cancel()
     endif
-    redraw!
 endfunction
 
 nmap     <silent> <Tab>      :bnext<CR>
@@ -358,7 +357,7 @@ nmap     <silent> <Leader>t  :TagbarToggle<CR>
 nmap     <silent> <Leader>u  :GundoToggle<CR>
 map      <silent> <Leader>/  <plug>NERDCommenterToggle
 nnoremap <silent> <Esc><Esc> :call <SID>refresh()<CR>:set nopaste<CR>
-nnoremap <silent> <C-l>      :call <SID>refresh()<CR>
+nnoremap <silent> <C-l>      :call <SID>refresh()<CR><C-l>
 nmap              f          <Plug>Sneak_f
 nmap              F          <Plug>Sneak_F
 xmap              f          <Plug>Sneak_f
