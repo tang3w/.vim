@@ -83,6 +83,8 @@ augroup CursorLine
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
+set lazyredraw
+
 " Wrap and break
 set wrap
 set linebreak
