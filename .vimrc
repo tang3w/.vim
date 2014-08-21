@@ -288,6 +288,9 @@ let g:aghighlight=1
 let g:sneak#streak=1
 let g:sneak#use_ic_scs=1
 
+" MRU
+let MRU_Exclude_Files='.git/*'
+
 " Session
 let g:session_autosave='yes'
 let g:session_autoload='no'
