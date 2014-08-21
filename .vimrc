@@ -256,6 +256,11 @@ let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_new_file="t"
 
+" Signify
+let g:signify_sign_delete='-'
+let g:signify_sign_delete_first_line='-'
+let g:signify_sign_change = '~'
+
 " Gundo
 let g:gundo_right=1
 let g:gundo_close_on_revert=1
