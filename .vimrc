@@ -200,7 +200,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 Plugin 'sjl/gundo.vim'
 Plugin 'ervandew/supertab'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-repeat'
@@ -269,8 +269,10 @@ let g:gundo_close_on_revert=1
 let g:SuperTabDefaultCompletionType="context"
 let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
 
+" DelimitMate
+autocmd FileType python let b:delimitMate_nesting_quotes = ['"']
+
 " Syntastic
-let g:syntastic_check_on_open=1
 let g:syntastic_aggregate_errors=1
 let g:syntastic_enable_highlighting=0
 let g:syntastic_python_checkers=['pyflakes', 'pep8']
