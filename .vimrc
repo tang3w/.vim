@@ -280,6 +280,7 @@ let g:syntastic_ruby_checkers=['rubocop']
 function s:autoSave()
     if &modifiable && &modified
         silent! noautocmd write
+        call sy#start(b:sy_path)
         SyntasticCheck
     endif
 endfunction
