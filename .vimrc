@@ -285,7 +285,7 @@ function s:autoSave()
     endif
 endfunction
 
-autocmd InsertLeave,CursorHold * call s:autoSave()
+autocmd CursorHold * call s:autoSave()
 
 " Ag
 let g:aghighlight=1
