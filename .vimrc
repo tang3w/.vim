@@ -221,10 +221,12 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'thinca/vim-quickrun'
 Plugin 'mattn/emmet-vim'
 Plugin 'SirVer/ultisnips'
-Plugin 'csexton/jekyll.vim'
 Plugin 'wikitopian/hardmode'
 
+" Language specific plugins
+Plugin 'justinmk/vim-syntax-extra'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'csexton/jekyll.vim'
 
 call vundle#end()
 filetype plugin indent on
