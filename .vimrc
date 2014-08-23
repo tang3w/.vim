@@ -200,7 +200,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 Plugin 'sjl/gundo.vim'
 Plugin 'ervandew/supertab'
-Plugin 'Raimondi/delimitMate'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-repeat'
@@ -224,7 +225,6 @@ Plugin 'csexton/jekyll.vim'
 Plugin 'wikitopian/hardmode'
 
 Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'tpope/vim-endwise'
 
 call vundle#end()
 filetype plugin indent on
@@ -271,9 +271,6 @@ let g:gundo_close_on_revert=1
 " SuperTab
 let g:SuperTabDefaultCompletionType="context"
 let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
-
-" DelimitMate
-autocmd FileType python let b:delimitMate_nesting_quotes = ['"']
 
 " Syntastic
 let g:syntastic_aggregate_errors=1
