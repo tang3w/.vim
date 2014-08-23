@@ -256,6 +256,9 @@ let g:ctrlp_match_window="order:ttb"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_new_file="t"
 
+" Numbers
+let g:numbers_exclude=['tagbar', 'gundo', 'nerdtree', 'quickrun']
+
 " Signify
 let g:signify_sign_delete='-'
 let g:signify_sign_delete_first_line='-'
@@ -312,11 +315,6 @@ let g:quickrun_config["_"]={
     \   'outputter/buffer/close_on_empty': 1,
     \   'outputter/buffer/into': 1,
     \ }
-
-augroup QuickRun
-    autocmd!
-    autocmd BufNew,BufEnter *quickrun* setlocal nonumber norelativenumber
-augroup END
 
 " Emmet
 let g:user_emmet_mode='i'
