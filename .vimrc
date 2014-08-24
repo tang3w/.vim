@@ -307,6 +307,17 @@ let g:session_autoload='no'
 let g:session_verbose_messages=0
 let g:session_command_aliases=1
 
+let g:expand_region_text_objects = {
+    \   'iw' : 0,
+    \   'iW' : 0,
+    \   'i"' : 1,
+    \   'i''': 1,
+    \   'i]' : 1,
+    \   'ib' : 1,
+    \   'iB' : 1,
+    \   'ip' : 0
+    \ }
+
 " Quickrun
 let g:quickrun_config={}
 let g:quickrun_config["_"]={
