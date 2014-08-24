@@ -315,7 +315,8 @@ let g:expand_region_text_objects = {
     \   'i]' : 1,
     \   'ib' : 1,
     \   'iB' : 1,
-    \   'ip' : 0
+    \   'ip' : 0,
+    \   'ii' : 0
     \ }
 
 " Quickrun
@@ -343,21 +344,22 @@ let g:HardMode_hardmodeMsg="You are in hard mode!"
 let g:HardMode_easymodeMsg="You are free now!"
 let g:HardMode_level="wannabe"
 
-" File types
+" FileTypes
 function s:expandTabTo2Space()
     setlocal tabstop=2 shiftwidth=2 softtabstop=2
 endfunction
 
 autocmd FileType ruby,javascript,css,html call s:expandTabTo2Space()
 
+" Commands
 command W w !sudo tee % > /dev/null
 
 " Mappings
-cnoremap          <C-a>      <Home>
-cnoremap          <C-e>      <End>
+cmap <C-a> <Home>
+cmap <C-e> <End>
 
-inoremap <expr>   <C-y>      <SID>getWord(<SID>prevL())
-inoremap <expr>   <C-e>      <SID>getWord(<SID>nextL())
+imap <expr> <C-y> <SID>getWord(<SID>prevL())
+imap <expr> <C-e> <SID>getWord(<SID>nextL())
 
 function s:refresh()
     let @/ = ""
@@ -366,33 +368,34 @@ function s:refresh()
     endif
 endfunction
 
-nmap     <silent> <Tab>      :bnext<CR>
-nmap     <silent> <S-Tab>    :bprevious<CR>
-nmap     <silent> <Leader>a  :FSHere<CR>
-nmap              <Leader>b  :BufstopFast<CR>
-nmap     <silent> <Leader>e  :NERDTreeToggle<CR>
-nmap     <silent> <Leader>f  :CtrlP<CR>
-nmap              <Leader>g  :Ag!<space>
-nmap     <silent> <Leader>m  :MRU<CR>
-nmap     <silent> <Leader>q  :Bdelete<CR>
-map      <silent> <Leader>r  <Plug>(quickrun)
-nmap     <silent> <Leader>t  :TagbarToggle<CR>
-nmap     <silent> <Leader>u  :GundoToggle<CR>
-map      <silent> <Leader>/  <plug>NERDCommenterToggle
-nnoremap <silent> <Esc><Esc> :call <SID>refresh()<CR>:set nopaste<CR>
 nnoremap <silent> <C-l>      :call <SID>refresh()<CR><C-l>
-nmap              f          <Plug>Sneak_f
-nmap              F          <Plug>Sneak_F
-xmap              f          <Plug>Sneak_f
-xmap              F          <Plug>Sneak_F
-omap              f          <Plug>Sneak_f
-omap              F          <Plug>Sneak_F
-nmap              t          <Plug>Sneak_t
-nmap              T          <Plug>Sneak_T
-xmap              t          <Plug>Sneak_t
-xmap              T          <Plug>Sneak_T
-omap              t          <Plug>Sneak_t
-omap              T          <Plug>Sneak_T
-nnoremap          Q          <Nop>
-nnoremap          j          gj
-nnoremap          k          gk
+nmap     <silent> <Esc><Esc> :call <SID>refresh()<CR>:set nopaste<CR>
+
+nmap <silent> <Tab>     :bnext<CR>
+nmap <silent> <S-Tab>   :bprevious<CR>
+nmap <silent> <Leader>a :FSHere<CR>
+nmap          <Leader>b :BufstopFast<CR>
+nmap <silent> <Leader>e :NERDTreeToggle<CR>
+nmap <silent> <Leader>f :CtrlP<CR>
+nmap          <Leader>g :Ag!<space>
+nmap <silent> <Leader>m :MRU<CR>
+nmap <silent> <Leader>q :Bdelete<CR>
+map  <silent> <Leader>r <Plug>(quickrun)
+nmap <silent> <Leader>t :TagbarToggle<CR>
+nmap <silent> <Leader>u :GundoToggle<CR>
+map  <silent> <Leader>/ <plug>NERDCommenterToggle
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+nmap t <Plug>Sneak_t
+nmap T <Plug>Sneak_T
+xmap t <Plug>Sneak_t
+xmap T <Plug>Sneak_T
+omap t <Plug>Sneak_t
+omap T <Plug>Sneak_T
+nmap Q <Nop>
+nmap j gj
+nmap k gk
