@@ -371,10 +371,11 @@ endfunction
 nnoremap <silent> <C-l>      :call <SID>refresh()<CR><C-l>
 nmap     <silent> <Esc><Esc> :call <SID>refresh()<CR>:set nopaste<CR>
 
+map           <CR>      <Plug>(expand_region_expand)
 nmap <silent> <Tab>     :bnext<CR>
 nmap <silent> <S-Tab>   :bprevious<CR>
 nmap <silent> <Leader>a :FSHere<CR>
-nmap          <Leader>b :BufstopFast<CR>
+nmap <silent> <Leader>b :BufstopFast<CR>
 nmap <silent> <Leader>e :NERDTreeToggle<CR>
 nmap <silent> <Leader>f :CtrlP<CR>
 nmap          <Leader>g :Ag!<space>
