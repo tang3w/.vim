@@ -350,6 +350,8 @@ endfunction
 
 autocmd FileType ruby,javascript,css,html call s:expandTabTo2Space()
 
+command W w !sudo tee % > /dev/null
+
 " Mappings
 cnoremap          <C-a>      <Home>
 cnoremap          <C-e>      <End>
