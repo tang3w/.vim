@@ -195,6 +195,7 @@ Plugin 'ciaranm/detectindent'
 Plugin 'kien/ctrlp.vim'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'kshenoy/vim-signature'
+Plugin 'dickeyxxx/status.vim'
 Plugin 'vim-scripts/lastpos.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
@@ -261,6 +262,22 @@ let g:ctrlp_open_new_file="t"
 " Numbers
 let g:numbers_exclude=['tagbar', 'gundo', 'nerdtree', 'quickrun']
 
+" Status
+let g:statusline_order = [
+    \ 'Filename',
+    \ 'CheckUnix',
+    \ 'Encoding',
+    \ 'Filetype',
+    \ 'Modified',
+    \ 'Fugitive',
+    \ 'Syntastic',
+    \ 'Paste',
+    \ 'ReadOnly',
+    \ 'RightSeperator',
+    \ 'CursorColumn',
+    \ 'LineAndTotal',
+    \ 'FilePercent']
+
 " Signify
 let g:signify_sign_delete='-'
 let g:signify_sign_delete_first_line='-'
@@ -313,6 +330,7 @@ let g:expand_region_text_objects = {
     \   'i"' : 1,
     \   'i''': 1,
     \   'i]' : 1,
+    \   'ia' : 0,
     \   'ib' : 1,
     \   'iB' : 1,
     \   'ip' : 0,
