@@ -123,6 +123,12 @@ set noshowmode
 set showtabline=1
 set guioptions-=e
 
+" Hide scroll bar
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
 " Make tab character visiable
 set list
 set listchars=tab:‣-
