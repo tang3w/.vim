@@ -78,9 +78,9 @@ set noerrorbells
 
 " Highlight current line
 augroup CursorLine
-  autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
 augroup END
 
 set lazyredraw
@@ -156,6 +156,9 @@ set shell=/bin/bash
 " Word list
 set dictionary=~/.vim/resource/words
 set infercase
+
+" FileType detect
+autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown
 
 " Copy previous or next nonblank line
 
@@ -363,10 +366,10 @@ let g:jekyll_post_published='false'
 let g:jekyll_path='~/Workspace/Repository/tang3w.github.com'
 
 " Hardmode
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+let g:HardMode_level="wannabe"
 let g:HardMode_hardmodeMsg="You are in hard mode!"
 let g:HardMode_easymodeMsg="You are free now!"
-let g:HardMode_level="wannabe"
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " FileTypes
 function s:expandTabTo2Space()
