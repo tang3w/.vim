@@ -244,6 +244,9 @@ filetype plugin indent on
 " NERDTree
 let g:NERDTreeShowHidden=1
 let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeMouseMode=2
+let g:NERDTreeMapCWD='-'
 
 " Tagbar
 let g:tagbar_autoclose=1
@@ -395,6 +398,16 @@ function s:refresh()
     endif
 endfunction
 
+function s:toggleNERDTree()
+    if nerdtree#isTreeOpen()
+        NERDTreeClose
+    elseif filereadable(expand("%:p"))
+        NERDTreeFind
+    else
+        NERDTreeCWD
+    endif
+endfunction
+
 nnoremap <silent> <C-l>      :call <SID>refresh()<CR><C-l>
 nmap     <silent> <Esc><Esc> :call <SID>refresh()<CR>:set nopaste<CR>
 
@@ -403,7 +416,7 @@ nmap <silent> <Tab>     :bnext<CR>
 nmap <silent> <S-Tab>   :bprevious<CR>
 nmap <silent> <Leader>a :FSHere<CR>
 nmap <silent> <Leader>b :BufstopFast<CR>
-nmap <silent> <Leader>e :NERDTreeToggle<CR>
+nmap <silent> <Leader>e :call <SID>toggleNERDTree()<CR>
 nmap <silent> <Leader>f :CtrlP<CR>
 nmap          <Leader>g :Ag!<space>
 nmap <silent> <Leader>m :MRU<CR>
