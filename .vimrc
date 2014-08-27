@@ -383,6 +383,8 @@ autocmd FileType ruby,javascript,css,html call s:expandTabTo2Space()
 
 " Commands
 command W w !sudo tee % > /dev/null
+autocmd FileType qf nmap <silent> <buffer> <cr> <cr>:lcl<cr>
+autocmd FileType qf nmap <silent> <buffer> q :lcl<cr>
 
 " Mappings
 cmap <C-a> <Home>
@@ -411,7 +413,6 @@ endfunction
 nnoremap <silent> <C-l>      :call <SID>refresh()<CR><C-l>
 nmap     <silent> <Esc><Esc> :call <SID>refresh()<CR>:set nopaste<CR>
 
-map           <CR>      <Plug>(expand_region_expand)
 nmap <silent> <Tab>     :bnext<CR>
 nmap <silent> <S-Tab>   :bprevious<CR>
 nmap <silent> <Leader>a :FSHere<CR>
