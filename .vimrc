@@ -436,6 +436,8 @@ map  <silent> <Leader>r <Plug>(quickrun)
 nmap <silent> <Leader>t :TagbarToggle<CR>
 nmap <silent> <Leader>u :GundoToggle<CR>
 map  <silent> <Leader>/ <plug>NERDCommenterToggle
+nmap <silent> ]l :lnext<CR>
+nmap <silent> [l :lprev<CR>
 nmap f <Plug>Sneak_f
 nmap F <Plug>Sneak_F
 xmap f <Plug>Sneak_f
