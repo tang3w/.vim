@@ -213,6 +213,7 @@ Plugin 'ervandew/supertab'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/syntastic'
+Plugin 'benjumanji/vim-togglelist'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-repeat'
 Plugin 'michaeljsmith/vim-indent-object'
@@ -221,7 +222,6 @@ Plugin 'rking/ag.vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'mihaifm/bufstop'
 Plugin 'yegappan/mru'
-Plugin 'moll/vim-bbye'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
@@ -320,6 +320,9 @@ endfunction
 
 autocmd CursorHold * call s:autoSave()
 
+" ToggleList
+let g:toggle_list_restore=0
+
 " Ag
 let g:aghighlight=1
 
@@ -383,8 +386,15 @@ autocmd FileType ruby,javascript,css,html call s:expandTabTo2Space()
 
 " Commands
 command W w !sudo tee % > /dev/null
-autocmd FileType qf nmap <silent> <buffer> <cr> <cr>:lcl<cr>
-autocmd FileType qf nmap <silent> <buffer> q :lcl<cr>
+
+" Autocmds
+function s:closeqf()
+    silent! lclose
+    silent! cclose
+endfunction
+
+autocmd FileType qf nnoremap <silent> <buffer> <CR> <CR>:call <SID>closeqf()<CR>
+autocmd FileType qf nmap <silent> <buffer> q :call <SID>closeqf()<CR>
 
 " Mappings
 cmap <C-a> <Home>
@@ -421,7 +431,6 @@ nmap <silent> <Leader>e :call <SID>toggleNERDTree()<CR>
 nmap <silent> <Leader>f :CtrlP<CR>
 nmap          <Leader>g :Ag!<space>
 nmap <silent> <Leader>m :MRU<CR>
-nmap <silent> <Leader>q :Bdelete<CR>
 map  <silent> <Leader>r <Plug>(quickrun)
 nmap <silent> <Leader>t :TagbarToggle<CR>
 nmap <silent> <Leader>u :GundoToggle<CR>
