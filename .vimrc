@@ -154,8 +154,17 @@ let mapleader="\<Space>"
 set shell=/bin/bash
 
 " Word list
-set dictionary=~/.vim/resource/words
 set infercase
+set dictionary=~/.vim/resource/words
+
+function s:prependDict(dicts)
+    let dictlist = split(a:dicts, ',')
+    let dictlist = map(dictlist, "'~/.vim/resource/'.v:val.'.dict'")
+    execute 'setlocal dictionary='.join(dictlist, ',')
+    setlocal dictionary+=~/.vim/resource/words
+endfunction
+
+autocmd FileType javascript call s:prependDict('javascript,node')
 
 " FileType detect
 autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown
