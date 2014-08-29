@@ -311,6 +311,7 @@ let g:gundo_close_on_revert=1
 " SuperTab
 let g:SuperTabDefaultCompletionType="context"
 let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
+let g:SuperTabClosePreviewOnPopupClose=1
 
 " Syntastic
 let g:syntastic_aggregate_errors=1
