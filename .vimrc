@@ -88,7 +88,7 @@ set lazyredraw
 " Wrap and break
 set wrap
 set linebreak
-let &showbreak="↳ "
+let &showbreak='↳ '
 set whichwrap=b,s,h,l,<,>,[,]
 
 " No swap file
@@ -284,11 +284,11 @@ let g:detectindent_preferred_indent=4
 let g:detectindent_max_lines_to_analyse=1024
 
 " Ctrlp
-let g:ctrlp_map=""
+let g:ctrlp_map=''
 let g:ctrlp_by_filename=1
-let g:ctrlp_match_window="order:ttb"
+let g:ctrlp_match_window='order:ttb'
 let g:ctrlp_show_hidden=1
-let g:ctrlp_open_new_file="t"
+let g:ctrlp_open_new_file='r'
 
 " Numbers
 let g:numbers_exclude=['tagbar', 'gundo', 'nerdtree', 'quickrun']
@@ -312,15 +312,19 @@ let g:statusline_order = [
 " Signify
 let g:signify_sign_delete='-'
 let g:signify_sign_delete_first_line='-'
-let g:signify_sign_change = '~'
+let g:signify_sign_change='~'
+let g:signify_mapping_toggle='<Nop>'
+let g:signify_mapping_toggle_highlight='<Nop>'
+let g:signify_mapping_next_hunk='<Nop>'
+let g:signify_mapping_prev_hunk='<Nop>'
 
 " Gundo
 let g:gundo_right=1
 let g:gundo_close_on_revert=1
 
 " SuperTab
-let g:SuperTabDefaultCompletionType="context"
-let g:SuperTabContextDefaultCompletionType="<C-n>"
+let g:SuperTabDefaultCompletionType='context'
+let g:SuperTabContextDefaultCompletionType='<C-n>'
 let g:SuperTabClosePreviewOnPopupClose=1
 
 " Syntastic
@@ -375,7 +379,7 @@ let g:expand_region_text_objects = {
 
 " Quickrun
 let g:quickrun_config={}
-let g:quickrun_config["_"]={
+let g:quickrun_config['_']={
     \   'outputter/buffer/split': ':botright 8sp',
     \   'outputter/buffer/close_on_empty': 1,
     \   'outputter/buffer/into': 1,
@@ -393,9 +397,9 @@ let g:jekyll_post_published='false'
 let g:jekyll_path='~/Workspace/Repository/tang3w.github.com'
 
 " Hardmode
-let g:HardMode_level="wannabe"
-let g:HardMode_hardmodeMsg="You are in hard mode!"
-let g:HardMode_easymodeMsg="You are free now!"
+let g:HardMode_level='wannabe'
+let g:HardMode_hardmodeMsg='You are in hard mode!'
+let g:HardMode_easymodeMsg='You are free now!'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " FileTypes
@@ -426,7 +430,7 @@ imap <expr> <C-e> <SID>getWord(<SID>nextL())
 imap <C-l> <C-o>l
 
 function s:refresh()
-    let @/ = ""
+    let @/ = ''
     if sneak#is_sneaking()
         call sneak#cancel()
     endif
@@ -435,7 +439,7 @@ endfunction
 function s:toggleNERDTree()
     if nerdtree#isTreeOpen()
         NERDTreeClose
-    elseif filereadable(expand("%:p"))
+    elseif filereadable(expand('%:p'))
         NERDTreeFind
     else
         NERDTreeCWD
