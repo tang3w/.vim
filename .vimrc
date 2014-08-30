@@ -174,6 +174,7 @@ function s:prependDict(dicts)
 endfunction
 
 autocmd FileType javascript call s:prependDict('javascript,node')
+autocmd FileType vim call s:prependDict('vim')
 
 " FileType detect
 autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown
@@ -227,7 +228,6 @@ Plugin 'vim-scripts/lastpos.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 Plugin 'sjl/gundo.vim'
-Plugin 'szw/vim-kompleter'
 Plugin 'ervandew/supertab'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-endwise'
@@ -318,13 +318,9 @@ let g:signify_sign_change = '~'
 let g:gundo_right=1
 let g:gundo_close_on_revert=1
 
-" Kompleter
-let g:kompleter_replace_standard_mappings=0
-let g:kompleter_case_sensitive=2
-
 " SuperTab
 let g:SuperTabDefaultCompletionType="context"
-let g:SuperTabContextDefaultCompletionType="<C-x><C-u>"
+let g:SuperTabContextDefaultCompletionType="<C-n>"
 let g:SuperTabClosePreviewOnPopupClose=1
 
 " Syntastic
@@ -427,6 +423,7 @@ cmap <C-e> <End>
 
 imap <expr> <C-y> <SID>getWord(<SID>prevL())
 imap <expr> <C-e> <SID>getWord(<SID>nextL())
+imap <C-l> <C-o>l
 
 function s:refresh()
     let @/ = ""
