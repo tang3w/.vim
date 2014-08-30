@@ -203,11 +203,7 @@ winrestview()
 winsaveview()
 winwidth()
 writefile()
-
-
-
 changedtick
-
 beval_bufnr
 beval_col
 beval_lnum
@@ -262,9 +258,6 @@ throwpoint
 val
 version
 warningmsg
-
-
-
 <SID>
 <buffer>
 <expr>
@@ -272,9 +265,6 @@ warningmsg
 <silent>
 <special>
 <unique>
-
-
-
 'aleph'
 'al'
 'allowrevins'
@@ -923,9 +913,6 @@ warningmsg
 'wb'
 'writedelay'
 'wd'
-
-
-
 :!
 :!!
 :#
@@ -1432,9 +1419,6 @@ warningmsg
 :yank
 :z
 :~
-
-
-
 BufAdd
 BufCreate
 BufDelete
@@ -1514,9 +1498,6 @@ VimLeavePre
 VimResized
 WinEnter
 WinLeave
-
-
-
 <BS>
 <Bar>
 <Bslash>
