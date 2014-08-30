@@ -123,6 +123,12 @@ set noshowmode
 set showtabline=1
 set guioptions-=e
 
+" No preview
+set completeopt-=preview
+
+" Popup menu height
+set pumheight=15
+
 " Hide scroll bar
 set guioptions-=l
 set guioptions-=L
