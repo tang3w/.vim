@@ -123,6 +123,9 @@ set noshowmode
 set showtabline=1
 set guioptions-=e
 
+" Dictionary complete
+set complete+=k
+
 " No preview
 set completeopt-=preview
 
@@ -224,6 +227,7 @@ Plugin 'vim-scripts/lastpos.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 Plugin 'sjl/gundo.vim'
+Plugin 'szw/vim-kompleter'
 Plugin 'ervandew/supertab'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-endwise'
@@ -314,9 +318,13 @@ let g:signify_sign_change = '~'
 let g:gundo_right=1
 let g:gundo_close_on_revert=1
 
+" Kompleter
+let g:kompleter_replace_standard_mappings=0
+let g:kompleter_case_sensitive=2
+
 " SuperTab
 let g:SuperTabDefaultCompletionType="context"
-let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
+let g:SuperTabContextDefaultCompletionType="<C-x><C-u>"
 let g:SuperTabClosePreviewOnPopupClose=1
 
 " Syntastic
