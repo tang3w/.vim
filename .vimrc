@@ -250,6 +250,7 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'thinca/vim-quickrun'
 Plugin 'mattn/emmet-vim'
 Plugin 'SirVer/ultisnips'
+Plugin 'jeetsukumaran/vim-buffersaurus'
 Plugin 'wikitopian/hardmode'
 
 " Language specific plugins
@@ -396,6 +397,9 @@ let g:UltiSnipsSnippetDirectories=['vim-snippets']
 let g:jekyll_post_published='false'
 let g:jekyll_path='~/Workspace/Repository/tang3w.github.com'
 
+" Buffersaurus
+let g:buffersaurus_flash_jumped_line=0
+
 " Hardmode
 let g:HardMode_level='wannabe'
 let g:HardMode_hardmodeMsg='You are in hard mode!'
@@ -455,7 +459,7 @@ nmap <silent> <Leader>a :FSHere<CR>
 nmap <silent> <Leader>b :BufstopFast<CR>
 nmap <silent> <Leader>e :call <SID>toggleNERDTree()<CR>
 nmap <silent> <Leader>f :CtrlP<CR>
-nmap          <Leader>g :Ag!<space>
+nmap          <Leader>g :Ag!<Space>
 nmap <silent> <Leader>m :MRU<CR>
 map  <silent> <Leader>r <Plug>(quickrun)
 nmap <silent> <Leader>t :TagbarToggle<CR>
