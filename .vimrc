@@ -251,6 +251,7 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'mattn/emmet-vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'jeetsukumaran/vim-buffersaurus'
+Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'wikitopian/hardmode'
 
 " Language specific plugins
