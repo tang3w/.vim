@@ -101,9 +101,6 @@ set autoread
 " Max undo times
 set history=1000
 
-" Cursor hold time
-set updatetime=800
-
 " Enable fold
 set foldenable
 
@@ -336,16 +333,6 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_python_checkers=['pyflakes', 'pep8']
 let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_ruby_checkers=['rubocop']
-
-function s:autoSave()
-    if &modifiable && &modified
-        silent! noautocmd write
-        call sy#start(b:sy_path)
-        SyntasticCheck
-    endif
-endfunction
-
-autocmd CursorHold * call s:autoSave()
 
 " ToggleList
 let g:toggle_list_restore=0
