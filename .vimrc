@@ -413,6 +413,14 @@ endfunction
 autocmd FileType qf nnoremap <silent> <buffer> <CR> <CR>:call <SID>closeqf()<CR>
 autocmd FileType qf nmap <silent> <buffer> q :call <SID>closeqf()<CR>
 
+function s:autoHeader(prg)
+    0put='#!/usr/bin/env '.a:prg.\"\n\"|$
+endfunction
+
+autocmd BufNewFile *.py call <SID>autoHeader('python')
+autocmd BufNewFile *.rb call <SID>autoHeader('ruby')
+autocmd BufNewFile *.sh call <SID>autoHeader('bash')
+
 " Mappings
 cmap <C-a> <Home>
 cmap <C-e> <End>
