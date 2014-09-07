@@ -43,13 +43,6 @@ endif
 syntax enable
 syntax on
 
-" Gruvbox colorscheme fix
-let g:gruvbox_italic=0
-
-" Colorscheme
-set background=dark
-colorscheme gruvbox
-
 " Font
 set guifont=Monaco:h16
 
@@ -249,6 +242,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'jeetsukumaran/vim-buffersaurus'
 Plugin 'vim-scripts/CmdlineComplete'
+Plugin 'morhetz/gruvbox'
 Plugin 'wikitopian/hardmode'
 
 " Language specific plugins
@@ -258,6 +252,13 @@ Plugin 'csexton/jekyll.vim'
 
 call vundle#end()
 filetype plugin indent on
+
+" Gruvbox colorscheme fix
+let g:gruvbox_italic=0
+
+" Colorscheme
+set background=dark
+colorscheme gruvbox
 
 " NERDTree
 let g:NERDTreeShowHidden=1
@@ -423,6 +424,15 @@ endfunction
 autocmd BufNewFile *.py call <SID>autoHeader('python')
 autocmd BufNewFile *.rb call <SID>autoHeader('ruby')
 autocmd BufNewFile *.sh call <SID>autoHeader('bash')
+
+function s:afterColors()
+    if exists('g:colors_name') && strlen(g:colors_name)
+        execute 'runtime! after/colors/all.vim'
+        execute 'runtime! after/colors/'.g:colors_name.'.vim'
+    endif
+endfunction
+
+autocmd VimEnter,ColorScheme * call <SID>afterColors()
 
 " Mappings
 cmap <C-a> <Home>
