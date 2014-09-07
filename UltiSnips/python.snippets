@@ -1,0 +1,17 @@
+# Python snippets
+# Author by Tianyong Tang
+
+snippet __get__ "__get__"
+def __get__(self, obj, objtype=None):
+	return ${2:${VISUAL:None}}
+endsnippet
+
+snippet __set__ "__set__"
+def __set__(self, obj, value):
+	${2:${VISUAL:pass}}
+endsnippet
+
+snippet __delete__ "__delete__"
+def __delete__(self, obj):
+	${2:${VISUAL:pass}}
+endsnippet
