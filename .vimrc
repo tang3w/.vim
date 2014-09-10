@@ -255,6 +255,7 @@ filetype plugin indent on
 
 " Gruvbox colorscheme fix
 let g:gruvbox_italic=0
+let g:gruvbox_invert_selection=0
 
 " Colorscheme
 set background=dark
