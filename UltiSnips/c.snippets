@@ -43,8 +43,22 @@ for (${1:initialization}; ${2:condition}; ${3:increment}) {
 }
 endsnippet
 
+snippet "for:([1-9]\d*|[\w_][\w\d_]*)" "for" r
+int ${1:i};
+for (${1/(.*)/$1/} = 0; ${1/$(.*)/$1/} < `!p snip.rv = match.group(1)`; ${1/(.*)/$1/}++) {
+	${VISUAL}${0}
+}
+endsnippet
+
 snippet while "while"
 while (${1:condition}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet "while:([1-9]\d*|[\w_][\w\d_]*)" "while" r
+int ${1:i} = `!p snip.rv = match.group(1)`;
+while (${1/(.*)/$1/}--) {
 	${VISUAL}${0}
 }
 endsnippet
