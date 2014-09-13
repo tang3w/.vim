@@ -31,6 +31,30 @@ snippet "#inc <" "#include <>"
 #include <${0:header}.h>
 endsnippet
 
+snippet typedef "typedef"
+typedef ${1:type} ${0:alias};
+endsnippet
+
+snippet uc "unsigned char"
+unsigned char
+endsnippet
+
+snippet us "unsigned short"
+unsigned short
+endsnippet
+
+snippet ui "unsigned int"
+unsigned int
+endsnippet
+
+snippet ul "unsigned long"
+unsigned long
+endsnippet
+
+snippet ull "unsigned long long"
+unsigned long long
+endsnippet
+
 snippet main "main function"
 int main(int argc, char **argv) {
 	${VISUAL}${0}

@@ -441,7 +441,8 @@ cmap <C-e> <End>
 
 imap <expr> <C-y> <SID>getWord(<SID>prevL())
 imap <expr> <C-e> <SID>getWord(<SID>nextL())
-imap <C-l> <C-o>l
+imap        <C-]> <C-r>=SuperTab('n')<CR>
+imap        <C-l> <C-o>l
 
 function s:refresh()
     let @/ = ''
