@@ -243,6 +243,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'jeetsukumaran/vim-buffersaurus'
 Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'morhetz/gruvbox'
+Plugin 'tang3w/YankRing.vim'
 Plugin 'wikitopian/hardmode'
 
 " Language specific plugins
@@ -475,6 +476,7 @@ nmap <silent> <Leader>m :MRU<CR>
 map  <silent> <Leader>r <Plug>(quickrun)
 nmap <silent> <Leader>t :TagbarToggle<CR>
 nmap <silent> <Leader>u :GundoToggle<CR>
+nmap <silent> <Leader>y :YRShow<CR>
 map  <silent> <Leader>/ <plug>NERDCommenterToggle
 nmap <silent> ]l :lnext<CR>
 nmap <silent> [l :lprev<CR>
