@@ -394,6 +394,10 @@ let g:jekyll_path='~/Workspace/Repository/tang3w.github.com'
 " Buffersaurus
 let g:buffersaurus_flash_jumped_line=0
 
+" YankRing
+let g:yankring_replace_n_pkey=''
+let g:yankring_replace_n_nkey=''
+
 " Hardmode
 let g:HardMode_level='wannabe'
 let g:HardMode_hardmodeMsg='You are in hard mode!'
