@@ -409,7 +409,7 @@ function s:expandTabTo2Space()
     setlocal tabstop=2 shiftwidth=2 softtabstop=2
 endfunction
 
-autocmd FileType ruby,javascript,css,html call s:expandTabTo2Space()
+autocmd FileType ruby,javascript,scss,css,html call s:expandTabTo2Space()
 
 " Commands
 command W w !sudo tee % > /dev/null
