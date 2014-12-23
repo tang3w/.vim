@@ -466,6 +466,20 @@ function s:toggleNERDTree()
     endif
 endfunction
 
+function! CmdAlias(abbr, expansion)
+  execute 'cabbr '
+      \ . a:abbr
+      \ . ' <c-r>=getcmdpos() == 1 && getcmdtype() == ":" ? "'
+      \ . a:expansion
+      \ . '" : "'
+      \ . a:abbr
+      \ . '"<CR>'
+endfunction
+
+command! -nargs=+ CmdAlias call CmdAlias(<f-args>)
+
+CmdAlias qq q!
+
 nnoremap <silent> <C-l>      :call <SID>refresh()<CR><C-l>
 nmap     <silent> <Esc><Esc> :call <SID>refresh()<CR>:set nopaste<CR>
 
