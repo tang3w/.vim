@@ -243,11 +243,12 @@ Plugin 'SirVer/ultisnips'
 Plugin 'jeetsukumaran/vim-buffersaurus'
 Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'morhetz/gruvbox'
-Plugin 'tang3w/YankRing.vim'
+Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'wikitopian/hardmode'
 
 " Language specific plugins
 Plugin 'justinmk/vim-syntax-extra'
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'csexton/jekyll.vim'
 
@@ -329,6 +330,9 @@ let g:SuperTabDefaultCompletionType='context'
 let g:SuperTabContextDefaultCompletionType='<C-n>'
 let g:SuperTabClosePreviewOnPopupClose=1
 
+" Auto pairs
+let g:AutoPairsCenterLine=0
+
 " Syntastic
 let g:syntastic_aggregate_errors=1
 let g:syntastic_enable_highlighting=0
@@ -394,9 +398,8 @@ let g:jekyll_path='~/Workspace/Repository/tang3w.github.com'
 " Buffersaurus
 let g:buffersaurus_flash_jumped_line=0
 
-" YankRing
-let g:yankring_replace_n_pkey=''
-let g:yankring_replace_n_nkey=''
+" YankStack
+call yankstack#setup()
 
 " Hardmode
 let g:HardMode_level='wannabe'
@@ -405,11 +408,11 @@ let g:HardMode_easymodeMsg='You are free now!'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " FileTypes
-function s:expandTabTo2Space()
-    setlocal tabstop=2 shiftwidth=2 softtabstop=2
+function s:expandTab(num)
+    exec "setlocal tabstop=".a:num." shiftwidth=".a:num." softtabstop=".a:num
 endfunction
 
-autocmd FileType ruby,javascript,scss,css,html call s:expandTabTo2Space()
+autocmd FileType ruby,javascript,scss,css,html,yaml call s:expandTab(2)
 
 " Commands
 command W w !sudo tee % > /dev/null
@@ -494,7 +497,7 @@ nmap <silent> <Leader>m :MRU<CR>
 map  <silent> <Leader>r <Plug>(quickrun)
 nmap <silent> <Leader>t :TagbarToggle<CR>
 nmap <silent> <Leader>u :GundoToggle<CR>
-nmap <silent> <Leader>y :YRShow<CR>
+nmap <silent> <Leader>y :Yanks<CR>
 map  <silent> <Leader>/ <plug>NERDCommenterToggle
 nmap <silent> ]l :lnext<CR>
 nmap <silent> [l :lprev<CR>
@@ -511,5 +514,6 @@ xmap T <Plug>Sneak_T
 omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
 nmap Q <Nop>
+nmap Y y$
 nmap j gj
 nmap k gk
