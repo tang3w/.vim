@@ -244,6 +244,7 @@ Plugin 'jeetsukumaran/vim-buffersaurus'
 Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'morhetz/gruvbox'
 Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'thinca/vim-visualstar'
 Plugin 'wikitopian/hardmode'
 
 " Language specific plugins
