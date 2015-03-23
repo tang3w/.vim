@@ -250,6 +250,7 @@ Plugin 'wikitopian/hardmode'
 " Language specific plugins
 Plugin 'justinmk/vim-syntax-extra'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'vim-scripts/indenthtml.vim'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'csexton/jekyll.vim'
 
@@ -407,6 +408,10 @@ let g:HardMode_level='wannabe'
 let g:HardMode_hardmodeMsg='You are in hard mode!'
 let g:HardMode_easymodeMsg='You are free now!'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+" Indent HTML
+let g:html_indent_script1='inc'
+let g:html_indent_style1='inc'
 
 " FileTypes
 function s:expandTab(num)
