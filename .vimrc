@@ -484,8 +484,10 @@ command! -nargs=+ CmdAlias call CmdAlias(<f-args>)
 
 CmdAlias qq q!
 
+set pastetoggle=<Leader>p
+
+nnoremap <expr>   gp         '`['.getregtype()[0].'`]'
 nnoremap <silent> <C-l>      :call <SID>refresh()<CR><C-l>
-nmap     <silent> <Esc><Esc> :call <SID>refresh()<CR>:set nopaste<CR>
 
 nmap <silent> <Tab>     :bnext<CR>
 nmap <silent> <S-Tab>   :bprevious<CR>
