@@ -445,6 +445,10 @@ endfunction
 autocmd VimEnter,ColorScheme * call <SID>afterColors()
 
 " Mappings
+cmap <Esc> <Nop>
+vmap <Esc> <Nop>
+imap <Esc> <Nop>
+nmap <C-c> <Nop>
 cmap <C-a> <Home>
 cmap <C-e> <End>
 
