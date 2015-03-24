@@ -244,7 +244,7 @@ Plugin 'jeetsukumaran/vim-buffersaurus'
 Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'morhetz/gruvbox'
 Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'thinca/vim-visualstar'
+Plugin 'haya14busa/vim-asterisk'
 Plugin 'wikitopian/hardmode'
 
 " Language specific plugins
@@ -466,6 +466,11 @@ imap <expr> <C-y> <SID>getWord(<SID>prevL())
 imap <expr> <C-e> <SID>getWord(<SID>nextL())
 imap        <C-]> <C-r>=SuperTab('n')<CR>
 imap        <C-l> <C-o>l
+
+map *  <Plug>(asterisk-*)
+map #  <Plug>(asterisk-#)
+map g* <Plug>(asterisk-g*)
+map g# <Plug>(asterisk-g#)
 
 function s:refresh()
     let @/ = ''
