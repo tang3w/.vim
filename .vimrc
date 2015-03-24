@@ -362,6 +362,10 @@ let g:session_autoload='no'
 let g:session_verbose_messages=0
 let g:session_command_aliases=1
 
+" Multiple Cursors
+let g:multi_cursor_quit_key='<C-c>'
+
+" Expand region
 let g:expand_region_text_objects = {
     \   'iw' : 0,
     \   'iW' : 0,
@@ -410,12 +414,13 @@ let g:HardMode_easymodeMsg='You are free now!'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " Indent HTML
+let g:html_indent_inctags='html,body,head,tbody'
 let g:html_indent_script1='inc'
 let g:html_indent_style1='inc'
 
 " FileTypes
 function s:expandTab(num)
-    exec "setlocal tabstop=".a:num." shiftwidth=".a:num." softtabstop=".a:num
+    exec 'setlocal tabstop='.a:num.' shiftwidth='.a:num.' softtabstop='.a:num
 endfunction
 
 autocmd FileType ruby,javascript,scss,css,html,yaml call s:expandTab(2)
