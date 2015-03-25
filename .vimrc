@@ -503,9 +503,18 @@ command! -nargs=+ CmdAlias call CmdAlias(<f-args>)
 
 CmdAlias qq q!
 
-set pastetoggle=<Leader>p
+function s:safePaste()
+    let ispaste = &paste
+    let ismouse = &mouse
+    set paste
+    set mouse=
+    execute 'normal "*p'
+    let &paste = ispaste
+    let &mouse = ismouse
+endfunction
 
 nnoremap <expr>   gp         '`['.getregtype()[0].'`]'
+nnoremap <silent> <Leader>p  :call <SID>safePaste()<CR>
 nnoremap <silent> <C-l>      :call <SID>refresh()<CR><C-l>
 
 nmap <silent> <Tab>     :bnext<CR>
