@@ -234,6 +234,7 @@ Plugin 'yegappan/mru'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+Plugin 'mhinz/vim-startify'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-dispatch'
@@ -251,6 +252,7 @@ Plugin 'wikitopian/hardmode'
 Plugin 'justinmk/vim-syntax-extra'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-scripts/indenthtml.vim'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'csexton/jekyll.vim'
 
@@ -271,6 +273,7 @@ let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMouseMode=2
 let g:NERDTreeMapCWD='-'
+let NERDTreeIgnore=['\.DS_Store']
 
 " Tagbar
 let g:tagbar_autoclose=1
@@ -362,6 +365,10 @@ let g:session_autoload='no'
 let g:session_verbose_messages=0
 let g:session_command_aliases=1
 
+" Startify
+let g:startify_session_dir='~/.vim/sessions'
+let g:startify_list_order=['sessions', 'files', 'dir', 'bookmarks']
+
 " Multiple Cursors
 let g:multi_cursor_quit_key='<C-c>'
 
@@ -419,11 +426,12 @@ let g:html_indent_script1='inc'
 let g:html_indent_style1='inc'
 
 " FileTypes
-function s:expandTab(num)
+function s:setTabWidth(num)
     exec 'setlocal tabstop='.a:num.' shiftwidth='.a:num.' softtabstop='.a:num
 endfunction
 
-autocmd FileType ruby,javascript,scss,css,html,yaml call s:expandTab(2)
+autocmd FileType ruby,javascript,scss,css call s:setTabWidth(2)
+autocmd FileType html,yaml,html.handlebars setlocal noexpandtab
 
 " Commands
 command W w !sudo tee % > /dev/null
