@@ -79,7 +79,7 @@ augroup END
 set lazyredraw
 
 " Wrap and break
-set wrap
+set nowrap
 set linebreak
 let &showbreak='↳ '
 set whichwrap=b,s,h,l,<,>,[,]
