@@ -488,7 +488,8 @@ function s:refresh()
 endfunction
 
 function s:toggleNERDTree()
-    if nerdtree#isTreeOpen()
+    " Check whether nerdtree is open
+    if (g:NERDTree.GetWinNum() != -1)
         NERDTreeClose
     elseif filereadable(expand('%:p'))
         NERDTreeFind
