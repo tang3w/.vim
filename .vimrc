@@ -555,4 +555,6 @@ omap T :<c-u>call sneak#wrap('', 1, 1, 0, 1)<CR>
 nmap Q <Nop>
 nmap Y y$
 nmap j gj
+vmap j gj
 nmap k gk
+vmap k gk
