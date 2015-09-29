@@ -44,7 +44,7 @@ syntax enable
 syntax on
 
 " Font
-set guifont=Monaco:h16
+set guifont=ConsolasHigh:h18
 
 " Backspace
 set backspace=indent,eol,start
