@@ -355,7 +355,7 @@ let g:aghighlight=1
 " Sneak
 let g:sneak#streak=1
 let g:sneak#use_ic_scs=1
-let g:sneak#target_labels="fgqwertyupzvbnmFGQWERTYUPZVBNM"
+let g:sneak#target_labels="fgqwertyupzvbnmFGQWERTYUPZVBNM1234567890"
 
 " MRU
 let MRU_Exclude_Files='.git/*'
@@ -546,14 +546,10 @@ nmap <silent> ]l :lnext<CR>
 nmap <silent> [l :lprev<CR>
 nmap f :<c-u>call sneak#wrap('', 1, 0, 1, 1)<CR>
 nmap F :<c-u>call sneak#wrap('', 1, 1, 1, 1)<CR>
-xmap f :<c-u>call sneak#wrap('', 1, 0, 1, 1)<CR>
-xmap F :<c-u>call sneak#wrap('', 1, 1, 1, 1)<CR>
 omap f :<c-u>call sneak#wrap('', 1, 0, 1, 1)<CR>
 omap F :<c-u>call sneak#wrap('', 1, 1, 1, 1)<CR>
 nmap t :<c-u>call sneak#wrap('', 1, 0, 0, 1)<CR>
 nmap T :<c-u>call sneak#wrap('', 1, 1, 0, 1)<CR>
-xmap t :<c-u>call sneak#wrap('', 1, 0, 0, 1)<CR>
-xmap T :<c-u>call sneak#wrap('', 1, 1, 0, 1)<CR>
 omap t :<c-u>call sneak#wrap('', 1, 0, 0, 1)<CR>
 omap T :<c-u>call sneak#wrap('', 1, 1, 0, 1)<CR>
 nmap Q <Nop>
