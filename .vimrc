@@ -23,6 +23,9 @@ set cinoptions=(sus,L0
 set copyindent
 set preserveindent
 
+" Clipboard
+set clipboard^=unnamed,unnamedplus
+
 " Multi-bytes character
 set ambiwidth=double
 set formatoptions+=mM
