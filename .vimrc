@@ -144,11 +144,6 @@ set virtualedit=onemore
 " Buffer hidden
 set hidden
 
-" Trailing whitespace
-autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
-autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
-highlight EOLWS ctermbg=red guibg=red
-
 " Map leader
 let mapleader="\<Space>"
 
@@ -249,6 +244,7 @@ Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'morhetz/gruvbox'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'haya14busa/vim-asterisk'
+Plugin 'vim-scripts/ShowTrailingWhitespace'
 Plugin 'wikitopian/hardmode'
 
 " Language specific plugins
