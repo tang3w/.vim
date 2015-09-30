@@ -545,12 +545,8 @@ nmap <silent> ]l :lnext<CR>
 nmap <silent> [l :lprev<CR>
 nmap f :<c-u>call sneak#wrap('', 1, 0, 1, 1)<CR>
 nmap F :<c-u>call sneak#wrap('', 1, 1, 1, 1)<CR>
-omap f :<c-u>call sneak#wrap('', 1, 0, 1, 1)<CR>
-omap F :<c-u>call sneak#wrap('', 1, 1, 1, 1)<CR>
 nmap t :<c-u>call sneak#wrap('', 1, 0, 0, 1)<CR>
 nmap T :<c-u>call sneak#wrap('', 1, 1, 0, 1)<CR>
-omap t :<c-u>call sneak#wrap('', 1, 0, 0, 1)<CR>
-omap T :<c-u>call sneak#wrap('', 1, 1, 0, 1)<CR>
 nmap Q <Nop>
 nmap Y y$
 nmap j gj
