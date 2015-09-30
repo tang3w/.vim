@@ -463,11 +463,12 @@ endfunction
 autocmd VimEnter,ColorScheme * call <SID>afterColors()
 
 " Mappings
-imap <Esc> <Nop>
-vmap <Esc> <Nop>
-nmap <C-c> <Nop>
-cmap <C-a> <Home>
-cmap <C-e> <End>
+imap     <Esc> <Nop>
+inoremap <C-c> <Esc>
+vmap     <Esc> <Nop>
+nmap     <C-c> <Nop>
+cmap     <C-a> <Home>
+cmap     <C-e> <End>
 
 imap <expr> <C-y> <SID>getWord(<SID>prevL())
 imap <expr> <C-e> <SID>getWord(<SID>nextL())
