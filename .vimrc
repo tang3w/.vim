@@ -510,12 +510,11 @@ function s:safePaste()
     let &mouse = ismouse
 endfunction
 
-nnoremap <silent> <C-l>      :call <SID>refresh()<CR><C-l>
-
 nmap <silent> <Tab>     :bnext<CR>
 nmap <silent> <S-Tab>   :bprevious<CR>
 nmap <silent> <C-k>     :call HM_Move("up")<CR>
 nmap <silent> <C-j>     :call HM_Move("down")<CR>
+nnoremap <silent> <C-l> :call <SID>refresh()<CR><C-l>
 nmap <silent> <Leader>a :FSHere<CR>
 nmap <silent> <Leader>b :BufstopFast<CR>
 nmap <silent> <Leader>e :call <SID>toggleNERDTree()<CR>
