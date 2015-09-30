@@ -522,8 +522,6 @@ function s:safePaste()
     let &mouse = ismouse
 endfunction
 
-nnoremap <expr>   gp         '`['.getregtype()[0].'`]'
-nnoremap <silent> <Leader>p  :call <SID>safePaste()<CR>
 nnoremap <silent> <C-l>      :call <SID>refresh()<CR><C-l>
 
 nmap <silent> <Tab>     :bnext<CR>
@@ -536,6 +534,7 @@ nmap <silent> <Leader>e :call <SID>toggleNERDTree()<CR>
 nmap <silent> <Leader>f :CtrlP<CR>
 nmap          <Leader>g :Ag!<Space>
 nmap <silent> <Leader>m :MRU<CR>
+nmap <silent> <Leader>p :call <SID>safePaste()<CR>
 map  <silent> <Leader>r <Plug>(quickrun)
 nmap <silent> <Leader>t :TagbarToggle<CR>
 nmap <silent> <Leader>u :GundoToggle<CR>
