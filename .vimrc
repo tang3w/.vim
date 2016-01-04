@@ -153,7 +153,8 @@ autocmd FileType javascript call s:prependDict('javascript,node')
 autocmd FileType vim call s:prependDict('vim')
 
 " FileType detect
-autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown
+autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown setlocal filetype=markdown
+autocmd BufRead,BufNewFile *.m,*.mm,*.pch setlocal filetype=objc
 
 " Copy previous or next nonblank line
 
@@ -242,6 +243,8 @@ Plugin 'vim-scripts/indenthtml.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'csexton/jekyll.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'keith/swift.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -375,11 +378,17 @@ let g:expand_region_text_objects = {
     \ }
 
 " Quickrun
-let g:quickrun_config={}
-let g:quickrun_config['_']={
-    \   'outputter/buffer/split': ':botright 8sp',
-    \   'outputter/buffer/close_on_empty': 1,
-    \   'outputter/buffer/into': 1,
+let g:quickrun_config={
+    \   'objc': {
+    \     'command': 'cc',
+    \     'exec': ['%c %s -o %s:p:r -framework Foundation', '%s:p:r %a', 'rm -f %s:p:r'],
+    \     'tempfile': '%{tempname()}.m'
+    \   },
+    \   '_': {
+    \     'outputter/buffer/split': ':botright 8sp',
+    \     'outputter/buffer/close_on_empty': 1,
+    \     'outputter/buffer/into': 1
+    \   }
     \ }
 
 " Emmet
