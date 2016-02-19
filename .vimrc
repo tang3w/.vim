@@ -153,6 +153,7 @@ autocmd FileType javascript call s:prependDict('javascript,node')
 autocmd FileType vim call s:prependDict('vim')
 
 " FileType detect
+autocmd FileType markdown setlocal spell
 autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown setlocal filetype=markdown
 autocmd BufRead,BufNewFile *.m,*.mm,*.pch setlocal filetype=objc
 
@@ -243,7 +244,6 @@ Plugin 'vim-scripts/indenthtml.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'csexton/jekyll.vim'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'keith/swift.vim'
 
 call vundle#end()
