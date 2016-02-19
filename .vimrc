@@ -238,6 +238,7 @@ Plugin 'vim-scripts/ShowTrailingWhitespace'
 Plugin 'wikitopian/hardmode'
 
 " Language specific plugins
+Plugin 'tang3w/LanguageTool'
 Plugin 'justinmk/vim-syntax-extra'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-scripts/indenthtml.vim'
@@ -416,6 +417,9 @@ let g:HardMode_level='wannabe'
 let g:HardMode_hardmodeMsg='You are in hard mode!'
 let g:HardMode_easymodeMsg='You are free now!'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+" LanguageTool
+let g:languagetool_jar='~/ltcli.jar'
 
 " Indent HTML
 let g:html_indent_inctags='html,body,head,tbody'
