@@ -149,8 +149,8 @@ function s:prependDict(dicts)
     setlocal dictionary+=~/.vim/resource/words
 endfunction
 
-autocmd FileType javascript call s:prependDict('javascript,node')
-autocmd FileType vim call s:prependDict('vim')
+autocmd FileType javascript call <SID>prependDict('javascript,node')
+autocmd FileType vim call <SID>prependDict('vim')
 
 " FileType detect
 autocmd FileType markdown setlocal spell
@@ -431,7 +431,7 @@ function s:setTabWidth(num)
     exec 'setlocal tabstop='.a:num.' shiftwidth='.a:num.' softtabstop='.a:num
 endfunction
 
-autocmd FileType ruby,javascript,scss,css call s:setTabWidth(2)
+autocmd FileType ruby,javascript,scss,css call <SID>setTabWidth(2)
 autocmd FileType html,yaml,html.handlebars setlocal noexpandtab
 
 " Commands
