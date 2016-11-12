@@ -358,6 +358,7 @@ let g:session_verbose_messages=0
 let g:session_command_aliases=1
 
 " Startify
+let g:startify_custom_header=[]
 let g:startify_session_dir='~/.vim/sessions'
 let g:startify_list_order=['sessions', 'files', 'dir', 'bookmarks']
 
