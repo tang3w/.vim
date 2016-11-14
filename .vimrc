@@ -476,7 +476,7 @@ let g:html_indent_style1='inc'
 
 " FileTypes
 function s:setTabWidth(num)
-    exec 'setlocal tabstop='.a:num.' shiftwidth='.a:num.' softtabstop='.a:num
+    execute 'setlocal tabstop='.a:num.' shiftwidth='.a:num.' softtabstop='.a:num
 endfunction
 
 autocmd FileType ruby,javascript,scss,css call <SID>setTabWidth(2)
