@@ -238,6 +238,7 @@ Plugin 'vim-scripts/ShowTrailingWhitespace'
 Plugin 'wikitopian/hardmode'
 
 " Language specific plugins
+Plugin 'junegunn/goyo.vim'
 Plugin 'tang3w/LanguageTool'
 Plugin 'justinmk/vim-syntax-extra'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -383,7 +384,11 @@ let g:expand_region_text_objects = {
 let g:quickrun_config={
     \   'objc': {
     \     'command': 'cc',
-    \     'exec': ['%c %s -o %s:p:r -framework Foundation', '%s:p:r %a', 'rm -f %s:p:r'],
+    \     'exec': [
+    \       '%c %s -o %s:p:r -framework Foundation',
+    \       '%s:p:r %a',
+    \       'rm -f %s:p:r'
+    \     ],
     \     'tempfile': '%{tempname()}.m'
     \   },
     \   '_': {
@@ -418,6 +423,40 @@ let g:HardMode_level='wannabe'
 let g:HardMode_hardmodeMsg='You are in hard mode!'
 let g:HardMode_easymodeMsg='You are free now!'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+" Goyo
+
+" Stop goyo from hiding line number, instead, we do it by ourself.
+let g:goyo_linenr = 1
+
+function s:goyoEnter()
+    let b:goyo_recovery_settings =
+        \ { 'wrap'           : &wrap,
+        \   'number'         : &number,
+        \   'relativenumber' : &relativenumber,
+        \   'cursorline'     : &cursorline
+        \ }
+
+    execute 'NumbersDisable'
+    setlocal norelativenumber
+    setlocal nonumber
+    setlocal nocursorline
+    setlocal wrap
+endfunction
+
+function s:goyoLeave()
+    execute 'NumbersEnable'
+
+    for [k, v] in items(b:goyo_recovery_settings)
+        execute printf('let &l:%s = %s', k, string(v))
+    endfor
+
+    redrawstatus!
+    redraw!
+endfunction
+
+autocmd User GoyoEnter nested call <SID>goyoEnter()
+autocmd User GoyoLeave nested call <SID>goyoLeave()
 
 " LanguageTool
 let g:languagetool_jar='~/ltcli.jar'
