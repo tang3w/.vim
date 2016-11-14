@@ -438,18 +438,18 @@ function s:goyoEnter()
         \ { 'wrap'           : &wrap,
         \   'number'         : &number,
         \   'relativenumber' : &relativenumber,
-        \   'cursorline'     : &cursorline,
         \   'background'     : &background,
+        \   'linespace'      : &linespace,
         \   'spell'          : &spell
         \ }
 
+    setlocal wrap
     execute 'NumbersDisable'
     setlocal norelativenumber
     setlocal nonumber
-    setlocal nocursorline
     setlocal background=light
+    setlocal linespace=5
     setlocal nospell
-    setlocal wrap
 endfunction
 
 function s:goyoLeave()
@@ -578,7 +578,7 @@ nmap <silent> <Leader>a :FSHere<CR>
 nmap <silent> <Leader>b :BufstopFast<CR>
 nmap <silent> <Leader>e :call <SID>toggleNERDTree()<CR>
 nmap <silent> <Leader>f :CtrlP<CR>
-nmap          <Leader>g :Ag!<Space>
+nmap          <Leader>s :Ag!<Space>
 nmap <silent> <Leader>m :MRU<CR>
 nmap <silent> <Leader>p :call <SID>safePaste()<CR>
 map  <silent> <Leader>r <Plug>(quickrun)
@@ -586,6 +586,7 @@ nmap <silent> <Leader>t :TagbarToggle<CR>
 nmap <silent> <Leader>u :GundoToggle<CR>
 nmap <silent> <Leader>y :Yanks<CR>
 map  <silent> <Leader>/ <plug>NERDCommenterToggle
+nmap <silent> <Leader>g :Goyo<CR>
 nmap <silent> ]l :lnext<CR>
 nmap <silent> [l :lprev<CR>
 nmap f :<c-u>call sneak#wrap('', 1, 0, 1, 1)<CR>
@@ -598,9 +599,3 @@ nmap j gj
 vmap j gj
 nmap k gk
 vmap k gk
-nmap $ g$
-vmap $ g$
-nmap 0 g0
-vmap 0 g0
-nmap ^ g^
-vmap ^ g^
