@@ -36,6 +36,10 @@ syntax on
 
 " Font
 set guifont=ConsolasHigh:h18
+let &guifontwide="Source Han Sans SC Light:h18"
+
+" Cursor
+set guicursor=a:blinkon0
 
 " Backspace
 set backspace=indent,eol,start
@@ -434,13 +438,17 @@ function s:goyoEnter()
         \ { 'wrap'           : &wrap,
         \   'number'         : &number,
         \   'relativenumber' : &relativenumber,
-        \   'cursorline'     : &cursorline
+        \   'cursorline'     : &cursorline,
+        \   'background'     : &background,
+        \   'spell'          : &spell
         \ }
 
     execute 'NumbersDisable'
     setlocal norelativenumber
     setlocal nonumber
     setlocal nocursorline
+    setlocal background=light
+    setlocal nospell
     setlocal wrap
 endfunction
 
@@ -590,3 +598,9 @@ nmap j gj
 vmap j gj
 nmap k gk
 vmap k gk
+nmap $ g$
+vmap $ g$
+nmap 0 g0
+vmap 0 g0
+nmap ^ g^
+vmap ^ g^
