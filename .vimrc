@@ -435,20 +435,24 @@ let g:goyo_linenr = 1
 
 function s:goyoEnter()
     let b:goyo_recovery_settings =
-        \ { 'wrap'           : &wrap,
-        \   'number'         : &number,
-        \   'relativenumber' : &relativenumber,
-        \   'background'     : &background,
-        \   'linespace'      : &linespace,
-        \   'spell'          : &spell
+        \ { 'wrap'           : &l:wrap,
+        \   'number'         : &l:number,
+        \   'showbreak'      : &l:showbreak,
+        \   'relativenumber' : &l:relativenumber,
+        \   'background'     : &l:background,
+        \   'linespace'      : &l:linespace,
+        \   'linebreak'      : &l:linebreak,
+        \   'spell'          : &l:spell
         \ }
 
     setlocal wrap
     execute 'NumbersDisable'
     setlocal norelativenumber
     setlocal nonumber
+    setlocal showbreak=
     setlocal background=light
     setlocal linespace=5
+    setlocal nolinebreak
     setlocal nospell
 endfunction
 
