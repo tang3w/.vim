@@ -456,6 +456,8 @@ function s:goyoEnter()
     setlocal linespace=5
     setlocal nolinebreak
     setlocal nospell
+
+    autocmd BufEnter <buffer> doautocmd goyo VimResized
 endfunction
 
 function s:goyoLeave()
