@@ -591,7 +591,7 @@ map  <silent> <Leader>r <Plug>(quickrun)
 nmap <silent> <Leader>t :TagbarToggle<CR>
 nmap <silent> <Leader>u :GundoToggle<CR>
 nmap <silent> <Leader>y :Yanks<CR>
-map  <silent> <Leader>/ <plug>NERDCommenterToggle
+map  <silent> <Leader>/ <Plug>NERDCommenterToggle
 nmap <silent> <Leader>g :Goyo<CR>
 nmap <silent> ]l :lnext<CR>
 nmap <silent> [l :lprev<CR>
