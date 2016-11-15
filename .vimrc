@@ -438,6 +438,7 @@ function s:goyoEnter()
         \ { 'wrap'           : &l:wrap,
         \   'number'         : &l:number,
         \   'showbreak'      : &l:showbreak,
+        \   'cursorline'     : &l:cursorline,
         \   'relativenumber' : &l:relativenumber,
         \   'background'     : &l:background,
         \   'linespace'      : &l:linespace,
@@ -450,6 +451,7 @@ function s:goyoEnter()
     setlocal norelativenumber
     setlocal nonumber
     setlocal showbreak=
+    setlocal nocursorline
     setlocal background=light
     setlocal linespace=5
     setlocal nolinebreak
