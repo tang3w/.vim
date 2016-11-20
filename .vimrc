@@ -157,7 +157,49 @@ autocmd FileType javascript call <SID>prependDict('javascript,node')
 autocmd FileType vim call <SID>prependDict('vim')
 
 " FileType detect
+
+function s:quickrun_fenced_code_block()
+    let pos = getcurpos()
+    let head = '^\v\s{-}(`|\~){3,}\s{-}(\w+)'
+    let headline = searchpos(head, 'bnc')[0]
+
+    if !headline
+        return
+    endif
+
+    call cursor(headline, 1)
+
+    let matches = matchlist(getline(headline), head)
+    let foot = '^\v\s{-}'.escape(matches[1], '~').'{3,}$'
+
+    if getline('.') =~ foot
+        let footline = line('.')
+    else
+        let footline = searchpos(foot, 'nc')[0]
+    endif
+
+    if !footline
+        call setpos('.', pos)
+        return
+    endif
+
+    let origin_line = pos[1]
+
+    if origin_line < headline || origin_line > footline
+        call setpos('.', pos)
+        return
+    endif
+
+    call setpos('.', pos)
+
+    let type = matches[2]
+    let command = printf("%d,%dQuickRun -type %s", headline + 1, footline - 1, type)
+
+    execute command
+endfunction
+
 autocmd FileType markdown setlocal spell
+autocmd FileType markdown nmap <silent> <buffer> <Leader>r :call <SID>quickrun_fenced_code_block()<CR>
 autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown setlocal filetype=markdown
 autocmd BufRead,BufNewFile *.m,*.mm,*.pch setlocal filetype=objc
 
@@ -457,10 +499,16 @@ function s:goyoEnter()
     setlocal nolinebreak
     setlocal nospell
 
-    autocmd BufEnter <buffer> doautocmd goyo VimResized
+    augroup GoyoEntered
+        autocmd BufEnter <buffer> doautocmd goyo VimResized
+    augroup END
 endfunction
 
 function s:goyoLeave()
+    augroup GoyoEntered
+        autocmd! * <buffer>
+    augroup END
+
     execute 'NumbersEnable'
 
     for [k, v] in items(b:goyo_recovery_settings)
