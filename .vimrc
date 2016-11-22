@@ -293,6 +293,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'csexton/jekyll.vim'
 Plugin 'keith/swift.vim'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
