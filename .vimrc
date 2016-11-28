@@ -159,7 +159,7 @@ autocmd FileType vim call <SID>prependDict('vim')
 " FileType detect
 
 function s:quickrun_fenced_code_block()
-    let pos = getcurpos()
+    let pos = getpos('.')
     let head = '^\v\s{-}(`|\~){3,}\s{-}(\w+)'
     let headline = searchpos(head, 'bnc')[0]
 
