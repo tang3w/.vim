@@ -34,10 +34,6 @@ set formatoptions+=mM
 syntax enable
 syntax on
 
-" Font
-set guifont=ConsolasHigh:h18
-let &guifontwide="Source Han Sans SC Light:h18"
-
 " Cursor
 set guicursor=a:blinkon0
 
