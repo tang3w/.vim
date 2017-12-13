@@ -294,6 +294,8 @@ Plugin 'rust-lang/rust.vim'
 call vundle#end()
 filetype plugin indent on
 
+set termguicolors
+
 " Gruvbox colorscheme fix
 let g:gruvbox_italic=0
 let g:gruvbox_invert_selection=0
