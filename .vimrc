@@ -270,7 +270,6 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'tpope/vim-dispatch'
 Plugin 'thinca/vim-quickrun'
 Plugin 'mattn/emmet-vim'
-Plugin 'SirVer/ultisnips'
 Plugin 'jeetsukumaran/vim-buffersaurus'
 Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'morhetz/gruvbox'
@@ -446,12 +445,6 @@ let g:quickrun_config={
 " Emmet
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-k>'
-
-" Ultisnips
-let g:UltiSnipsSnippetDirectories=['UltiSnips']
-let g:UltiSnipsJumpForwardTrigger='<Tab>'
-let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
-let g:UltiSnipsEditSplit='vertical'
 
 " Jekyll
 let g:jekyll_post_published='false'
