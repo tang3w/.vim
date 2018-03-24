@@ -37,6 +37,8 @@ syntax on
 " Cursor
 set guicursor=a:blinkon0
 
+set guifont=InputMono:h14,ConsolasHigh:h14,Courier\ New:h14
+
 " Backspace
 set backspace=indent,eol,start
 
