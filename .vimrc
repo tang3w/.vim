@@ -251,7 +251,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'ervandew/supertab'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-endwise'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'benjumanji/vim-togglelist'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-repeat'
@@ -375,12 +375,9 @@ let g:SuperTabClosePreviewOnPopupClose=1
 let g:AutoPairsCenterLine=0
 
 " Syntastic
-let g:syntastic_aggregate_errors=1
-let g:syntastic_enable_highlighting=0
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_python_checkers=['pyflakes', 'pep8']
-let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_ruby_checkers=['rubocop']
+let g:syntastic_python_checkers=['pyflakes', 'pep8']
+let g:syntastic_javascript_checkers=['eslint']
 
 " ToggleList
 let g:toggle_list_restore=0
